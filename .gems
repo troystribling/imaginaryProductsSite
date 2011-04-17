@@ -1,0 +1,9 @@
+# .gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+maruku -v0.6.0
+rack -v1.2.2
+sequel -v3.22.0
+sinatra -v1.2.3
+sinatra-logger -v0.1.1
+sqlite3 -v1.3.3
+syntax -v1.0.0
+tilt -v1.2.2
