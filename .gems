@@ -1,6 +1,11 @@
 # .gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+configuration -v1.2.0
+heroku -v1.20.1
+launchy -v0.3.7
 maruku -v0.6.0
+mime-types -v1.16
 rack -v1.2.2
+rest-client -v1.6.1
 sequel -v3.22.0
 sinatra -v1.2.3
 sinatra-logger -v0.1.1
