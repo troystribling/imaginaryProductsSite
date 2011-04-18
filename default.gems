@@ -1,4 +1,4 @@
-# .gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+# default.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
 configuration -v1.2.0
 heroku -v1.20.1
 launchy -v0.3.7
