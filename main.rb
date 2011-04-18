@@ -14,7 +14,7 @@ module SiteConfigure
     
     #-----------------------------------------------------------------------------------------------------
     def site_db
-      @site_db ||= Sequel.connect('sqlite://site.db')
+      @site_db ||= Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://site.db')
     end
     
   #### self  
