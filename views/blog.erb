@@ -18,23 +18,24 @@
 
 <div id="content">
 	<% posts.each do |post| %>
-  	<div class="post">
-  		<p class="date"><%= post[:created_at].strftime("%b") %><b><%= post[:created_at].strftime("%d") %></b></p>
-  		<h2 class="title"><a href="<%= post.url %>"><%= post[:title] %></a></h2>
-  		<p class="meta"><small>
-  			<%= post.linked_tags %>
-  			<% if Blog.disqus_shortname %>
-  				| <a href="<%= post.url %>#disqus_thread">comments</a>
-  			<% end %>
-  		</small></p>
-  		<div class="entry">
-  			<%= post.summary_html %>
-  			<% if post.more? %>
-  				<a href="<%= post.url %>">Continue reading &raquo;</a>
-  			<% end %>
-  		</div>
-  	</div>
+	<div class="post">
+		<p class="date"><%= post[:created_at].strftime("%b") %><b><%= post[:created_at].strftime("%d") %></b></p>
+		<h2 class="title"><a href="<%= post.url %>"><%= post[:title] %></a></h2>
+		<p class="meta"><small>
+			<%= post.linked_tags %>
+			<% if Blog.disqus_shortname %>
+				| <a href="<%= post.url %>#disqus_thread">comments</a>
+			<% end %>
+		</small></p>
+		<div class="entry">
+			<%= post.summary_html %>
+			<% if post.more? %>
+				<a href="<%= post.url %>">Continue reading &raquo;</a>
+			<% end %>
+		</div>
+	</div>
 	<% end %>
+
 	<% if posts.empty? %>
 		<h2><p>Looks like this is a fresh install of Scanty.</p><p><a href="/blog/auth">Log in</a>, then <a href="/blog/posts/new">create a post</a>.</p></h2>
 	<% else %>
@@ -42,9 +43,10 @@
 			<a href="/blog/past">Archive</a>
 		</div>
 	<% end %>
+
 	<% if admin? %>
 		<div id="new_post"><a href="/blog/posts/new">New post</a></div>
-	<% end %>	
+	<% end %>
 </div>
 
 <% if Blog.disqus_shortname %>

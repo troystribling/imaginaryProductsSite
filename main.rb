@@ -5,35 +5,7 @@ require 'sinatra'
 require 'sequel'
 require 'maruku'
 require 'syntax/convertors/html'
-
-##########################################################################################################
-module SiteConfigure
-  
-  ####----------------------------------------------------------------------------------------------------
-  class << self
-    
-    #-----------------------------------------------------------------------------------------------------
-    def site_db
-      @site_db ||= Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://site.db')
-    end
-    
-  #### self  
-  end
-  
-  #-------------------------------------------------------------------------------------------------------
-  unless self.site_db.table_exists? :posts
-		self.site_db.create_table :posts do
-			primary_key :id
-			text :title
-			text :body
-			text :slug
-			text :tags
-			timestamp :created_at
-		end
-	end
-	
-#### SiteConfigure  
-end
+require 'post'
 
 ##########################################################################################################
 configure do
@@ -58,99 +30,95 @@ error do
 end
 
 #---------------------------------------------------------------------------------------------------------
-$LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
-require 'post'
-
-#---------------------------------------------------------------------------------------------------------
 helpers do
 	def admin?
 		request.cookies[Blog.admin_cookie_key] == Blog.admin_cookie_value
 	end
 	def auth
-		stop [ 401, 'Not authorized' ] unless admin?
+		stop [401, 'Not authorized'] unless admin?
 	end
 end
 
 #---------------------------------------------------------------------------------------------------------
-layout 'layout'
-
-#---------------------------------------------------------------------------------------------------------
 # company
 #---------------------------------------------------------------------------------------------------------
+get '/' do
+	erb :index
+end
 
 #---------------------------------------------------------------------------------------------------------
-# product
+# products
 #---------------------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------------------
 # blog
 #---------------------------------------------------------------------------------------------------------
-get '/' do
+get '/blog' do
 	posts = Post.reverse_order(:created_at).limit(10)
-	erb :index, :locals => { :posts => posts }, :layout => false
+	erb :blog, :locals => { :posts => posts }, :layout => false
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/past/:year/:month/:day/:slug/' do
+get '/blog/past/:year/:month/:day/:slug/' do
 	post = Post.filter(:slug => params[:slug]).first
-	stop [ 404, "Page not found" ] unless post
+	stop [404, "Page not found"] unless post
 	@title = post.title
 	erb :post, :locals => { :post => post }
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/past/:year/:month/:day/:slug' do
-	redirect "/past/#{params[:year]}/#{params[:month]}/#{params[:day]}/#{params[:slug]}/", 301
+get '/blog/past/:year/:month/:day/:slug' do
+	redirect "/blog/past/#{params[:year]}/#{params[:month]}/#{params[:day]}/#{params[:slug]}/", 301
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/past' do
+get '/blog/past' do
 	posts = Post.reverse_order(:created_at)
 	@title = "Archive"
 	erb :archive, :locals => { :posts => posts }
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/past/tags/:tag' do
+get '/blog/past/tags/:tag' do
 	tag = params[:tag]
 	posts = Post.filter(:tags.like("%#{tag}%")).reverse_order(:created_at).limit(30)
 	@title = "Posts tagged #{tag}"
-	erb :tagged, :locals => { :posts => posts, :tag => tag }
+	erb :tagged, :locals => {:posts => posts, :tag => tag}
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/feed' do
+get '/blog/feed' do
 	@posts = Post.reverse_order(:created_at).limit(20)
 	content_type 'application/atom+xml', :charset => 'utf-8'
 	builder :feed
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/rss' do
+get '/blog/rss' do
 	redirect '/feed', 301
 end
 
 #---------------------------------------------------------------------------------------------------------
 # admin
 #---------------------------------------------------------------------------------------------------------
-get '/auth' do
+get '/blog/auth' do
 	erb :auth
 end
 
 #---------------------------------------------------------------------------------------------------------
-post '/auth' do
+post '/blog/auth' do
 	response.set_cookie(Blog.admin_cookie_key, :value => Blog.admin_cookie_value) if params[:password] == Blog.admin_password
-	redirect '/'
+	redirect '/blog'
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/posts/new' do
+get '/blog/posts/new' do
 	auth
-	erb :edit, :locals => { :post => Post.new, :url => '/posts' }
+	erb :edit, :locals => {:post => Post.new, :url => '/blog/posts'}
 end
 
 #---------------------------------------------------------------------------------------------------------
-post '/posts' do
+post '/blog/posts' do
 	auth
 	post = Post.new :title => params[:title], :tags => params[:tags], :body => params[:body], 
 	  :created_at => Time.now, :slug => Post.make_slug(params[:title])
@@ -159,18 +127,18 @@ post '/posts' do
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/past/:year/:month/:day/:slug/edit' do
+get '/blog/past/:year/:month/:day/:slug/edit' do
 	auth
 	post = Post.filter(:slug => params[:slug]).first
-	stop [ 404, "Page not found" ] unless post
-	erb :edit, :locals => { :post => post, :url => post.url }
+	stop [404, "Page not found"] unless post
+	erb :edit, :locals => {:post => post, :url => post.url}
 end
 
 #---------------------------------------------------------------------------------------------------------
-post '/past/:year/:month/:day/:slug/' do
+post '/blog/past/:year/:month/:day/:slug/' do
 	auth
 	post = Post.filter(:slug => params[:slug]).first
-	stop [ 404, "Page not found" ] unless post
+	stop [404, "Page not found"] unless post
 	post.title = params[:title]
 	post.tags = params[:tags]
 	post.body = params[:body]

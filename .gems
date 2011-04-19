@@ -3,6 +3,4 @@ mime-types
 sequel
 sinatra
 sinatra-logger
-sqlite3
 syntax
-tilt

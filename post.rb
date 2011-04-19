@@ -1,10 +1,28 @@
 ##########################################################################################################
+class SiteDb
+  @site_db ||= Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://site.db')
+  class << self; attr_reader :site_db; end
+end
+
+##########################################################################################################
 class Post < Sequel::Model
+
+  #-------------------------------------------------------------------------------------------------------
+  unless SiteDb.site_db.table_exists? :posts
+		SiteDb.site_db.create_table :posts do
+			primary_key :id
+			text :title
+			text :body
+			text :slug
+			text :tags
+			timestamp :created_at
+		end
+	end
 
   #--------------------------------------------------------------------------------------------------------
 	def url
 		d = self.created_at
-		"/past/#{d.year}/#{d.month}/#{d.day}/#{slug}/"
+		"/blog/past/#{d.year}/#{d.month}/#{d.day}/#{slug}/"
 	end
 
   #--------------------------------------------------------------------------------------------------------
@@ -37,7 +55,7 @@ class Post < Sequel::Model
   #--------------------------------------------------------------------------------------------------------
 	def linked_tags
 		tags.split.inject([]) do |accum, tag|
-			accum << "<a href=\"/past/tags/#{tag}\">#{tag}</a>"
+			accum << "<a href=\"/blog/past/tags/#{tag}\">#{tag}</a>"
 		end.join(" ")
 	end
 
