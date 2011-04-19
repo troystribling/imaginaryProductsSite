@@ -8,10 +8,15 @@ require 'syntax/convertors/html'
 require 'post'
 
 ##########################################################################################################
+class Path
+  BLOG = '/blog'  
+end
+
+##########################################################################################################
 configure do
 	require 'ostruct'
 	Blog = OpenStruct.new(
-		:title => 'a scanty blog',
+		:title => 'imaginaryProducts official blog',
 		:author => 'imaginaryProducts',
 		:url_base => 'http://imaginaryProducts.com/',
 		:admin_password => 'bigGameLLC',
@@ -43,7 +48,7 @@ end
 # company
 #---------------------------------------------------------------------------------------------------------
 get '/' do
-	erb :index
+	erb :index, :layout => :site_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
@@ -63,7 +68,7 @@ get '/blog/past/:year/:month/:day/:slug/' do
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post
 	@title = post.title
-	erb :post, :locals => { :post => post }
+	erb :post, :locals => {:post => post}, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
@@ -75,7 +80,7 @@ end
 get '/blog/past' do
 	posts = Post.reverse_order(:created_at)
 	@title = "Archive"
-	erb :archive, :locals => { :posts => posts }
+	erb :archive, :locals => { :posts => posts }, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
@@ -83,7 +88,7 @@ get '/blog/past/tags/:tag' do
 	tag = params[:tag]
 	posts = Post.filter(:tags.like("%#{tag}%")).reverse_order(:created_at).limit(30)
 	@title = "Posts tagged #{tag}"
-	erb :tagged, :locals => {:posts => posts, :tag => tag}
+	erb :tagged, :locals => {:posts => posts, :tag => tag}, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
@@ -102,7 +107,7 @@ end
 # admin
 #---------------------------------------------------------------------------------------------------------
 get '/blog/auth' do
-	erb :auth
+	erb :auth, :layout => 'blog_layout'
 end
 
 #---------------------------------------------------------------------------------------------------------
@@ -114,14 +119,14 @@ end
 #---------------------------------------------------------------------------------------------------------
 get '/blog/posts/new' do
 	auth
-	erb :edit, :locals => {:post => Post.new, :url => '/blog/posts'}
+	erb :edit, :locals => {:post => Post.new, :url => '/blog/posts'}, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
 post '/blog/posts' do
 	auth
-	post = Post.new :title => params[:title], :tags => params[:tags], :body => params[:body], 
-	  :created_at => Time.now, :slug => Post.make_slug(params[:title])
+	post = Post.new(:title => params[:title], :tags => params[:tags], :body => params[:body], 
+	  :created_at => Time.now, :slug => Post.make_slug(params[:title]))
 	post.save
 	redirect post.url
 end
@@ -131,7 +136,7 @@ get '/blog/past/:year/:month/:day/:slug/edit' do
 	auth
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post
-	erb :edit, :locals => {:post => post, :url => post.url}
+	erb :edit, :locals => {:post => post, :url => post.url}, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
