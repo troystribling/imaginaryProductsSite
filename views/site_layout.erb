@@ -8,20 +8,20 @@
 
 <body>
 
-<div id="header">
-	<div id="logo2">
-		<a href="/"><img src="/imaginaryProducts-name.png"></a>
-	</div>
+<div id="navigation-wrapper">
 	<div id="navigation">
   	<%= yield_content :navigation %>
 	</div>
 </div>
 
-<div id="content">
-	<% yield_content :content %>
+<div id="page-wrapper">
+  <div id="page">
+	  <% yield_content :page %>
+  </div>
 </div>
 
 <div id="footer">
+	<% yield_content :footer %>
 </div>
 
 </body>
