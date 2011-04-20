@@ -2,17 +2,17 @@ body {
 	margin: 0px;
 	padding: 20px;
 	margin-left: 50px;
-	background: #0A0A0D;
+	background: #FFF;
 	text-align: justify;
 	font: 14px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	color: #FFFFDC;
+	color: #000;
 }
 
 h1, h2, h3 {
 	font: 1.82em;
 	font-weight: normal;
 	font-family: Arial, Helvetica, sans-serif;
-	color: #FFFFFF;
+	color: #000;
 	text-align: left;
 }
 

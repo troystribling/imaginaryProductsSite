@@ -2,5 +2,5 @@ maruku
 mime-types
 sequel
 sinatra
-sinatra-logger
 syntax
+sinatra-content-for

@@ -2,6 +2,7 @@
 $:.unshift(File.dirname(__FILE__))
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/content_for'
 require 'sequel'
 require 'maruku'
 require 'syntax/convertors/html'
