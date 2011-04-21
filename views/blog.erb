@@ -21,10 +21,13 @@
 
   <div id="page-wrapper">
     <div id="page">
+    	<% if admin? %>
+    		<a href="/blog/posts/new" id="new-post">New post</a>
+    	<% end %>
     	<% posts.each do |post| %>
     	<div class="post">
     		<h2 class="title"><a href="<%= post.url %>"><%= post[:title] %></a></h2>
-    		<p class="date"><%= post[:created_at].strftime("%b %d, %Y") %></p>
+    		<p class="date"><%= post[:created_at].strftime("%B %d, %Y") %></p>
     		<div class="entry">
     			<%= post.summary_html %>
     			<% if post.more? %>
@@ -33,17 +36,10 @@
     		</div>
     	</div>
     	<% end %>
-    	<% if posts.empty? %>
-    		<h2><p>Looks like this is a fresh install of Scanty.</p>
-    		    <p><a href="/blog/auth">Log in</a>, then <a href="/blog/posts/new">create a post</a>.</p>
-    		</h2>
+    	<% if posts.empty? and not admin?%>
+    		<p><a href="/blog/auth">Log in</a></p>
     	<% else %>
-    		<div id="older-posts">
-    			<a href="/blog/past">Archive</a>
-    		</div>
-    	<% end %>
-    	<% if admin? %>
-    		<div id="new-post"><a href="/blog/posts/new">New post</a></div>
+    		<a href="/blog/past" id="older-posts">Archive</a>
     	<% end %>
     </div>
   </div>

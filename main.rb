@@ -85,14 +85,6 @@ get '/blog/past' do
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/blog/past/tags/:tag' do
-	tag = params[:tag]
-	posts = Post.filter(:tags.like("%#{tag}%")).reverse_order(:created_at).limit(30)
-	@title = "Posts tagged #{tag}"
-	erb :tagged, :locals => {:posts => posts, :tag => tag}, :layout => :layout
-end
-
-#---------------------------------------------------------------------------------------------------------
 get '/blog/feed' do
 	@posts = Post.reverse_order(:created_at).limit(20)
 	content_type 'application/atom+xml', :charset => 'utf-8'

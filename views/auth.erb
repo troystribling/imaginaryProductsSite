@@ -1,6 +1,7 @@
-<h2>Admin Auth</h2>
-<form action="/blog/auth" method="post">
-	<input type="password" name="password" />
-	<input type="submit" value="Login" />
-</form>
-<script type="text/javascript">document.forms[0].password.focus()</script>
+<% content_for :page do %>
+  <form action="/blog/auth" method="post">
+  	<input type="password" name="password" />
+  	<input type="submit" value="Login" />
+  </form>
+  <script type="text/javascript">document.forms[0].password.focus()</script>
+<% end %>
