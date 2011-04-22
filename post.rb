@@ -14,7 +14,6 @@ class Post < Sequel::Model
 			text :title
 			text :body
 			text :slug
-			text :tags
 			timestamp :created_at
 		end
 	end
@@ -50,13 +49,6 @@ class Post < Sequel::Model
 	def more?
 		@more ||= body.match(/.{200}.*?\n(.*)/m)
 		@more
-	end
-
-  #--------------------------------------------------------------------------------------------------------
-	def linked_tags
-		tags.split.inject([]) do |accum, tag|
-			accum << "<a href=\"/blog/past/tags/#{tag}\">#{tag}</a>"
-		end.join(" ")
 	end
 
   #--------------------------------------------------------------------------------------------------------

@@ -112,7 +112,7 @@ end
 #---------------------------------------------------------------------------------------------------------
 get '/blog/posts/new' do
 	auth
-	erb :edit, :locals => {:post => Post.new, :url => '/blog/posts'}, :layout => :layout
+	erb :new, :locals => {:post => Post.new, :url => '/blog/posts'}, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------

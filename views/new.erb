@@ -1,0 +1,13 @@
+<% content_for :page do %>
+  <form action="/blog/posts" method="post" name="new">
+  <div class="postzoom">
+    <div class="title">
+  	  <input type="text" name="title" />
+  	</div>
+  	<div class="entry">
+  		<textarea name="body"></textarea>
+  	</div>
+  	<div class="edit"><input type="submit" value="Save" /></div>
+  </div>
+  </form>
+<% end %>

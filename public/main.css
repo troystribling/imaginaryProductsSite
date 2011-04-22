@@ -57,22 +57,25 @@ hr {
     margin: 0px;
 }
 
-/******* content *******/
-#content {
-	margin: 0px auto;
-	padding: 20px 0 0 0;
-	float: left;
-	width: 50em;
-	margin-bottom: 10px;
-}
-
 /******* post *******/
-.post-wrapper {
+#post-navigation {
     margin: 0 auto;
-    width: 700px;
+    width: 212px;
+    float: right;
     text-align: left;
 }
+#post-navigation a {
+	text-decoration: none;
+}
+#post-navigation p {
+    margin: 0;
+    margin-bottom: 10px;
+}
 .post {
+    margin: 0 auto;
+    width: 700px;
+    float: left;
+    text-align: left;
 }
 .post .date {
 	float: left;
@@ -106,15 +109,6 @@ hr {
 	margin: 0;
 	padding: 0;
 }
-#older-posts {
-    font-size: 90%;
-	margin-top: 20px;
-	text-decoration: none;
-	display: block;
-}
-#new-post {
-	text-decoration: none;
-}
 
 /******* postzoom *******/
 .postzoom {
@@ -123,8 +117,9 @@ hr {
 }
 .postzoom .title {
 	margin: 0;
-	padding: 0px 0 0 0;
-	font-size: 3em;
+	padding: 0;
+	width: 200px;
+	height: 50px;
 }
 .postzoom .meta {
 	margin: 0;

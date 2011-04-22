@@ -21,25 +21,29 @@
 
   <div id="page-wrapper">
     <div id="page">
-    	<% if admin? %>
-    		<a href="/blog/posts/new" id="new-post">New post</a>
-    	<% end %>
-    	<% posts.each do |post| %>
-    	<div class="post">
-    		<h2 class="title"><a href="<%= post.url %>"><%= post[:title] %></a></h2>
-    		<p class="date"><%= post[:created_at].strftime("%B %d, %Y") %></p>
-    		<div class="entry">
-    			<%= post.summary_html %>
-    			<% if post.more? %>
-    				<a href="<%= post.url %>">Continue reading &raquo;</a>
-    			<% end %>
-    		</div>
-    	</div>
-    	<% end %>
-    	<% if posts.empty? and not admin?%>
-    		<p><a href="/blog/auth">Log in</a></p>
-    	<% else %>
-    		<a href="/blog/past" id="older-posts">Archive</a>
+      <div id="post-navigation">
+<%p admin?%>        
+      	<% if posts.empty? and not admin?%>
+      		<p><a href="/blog/auth">Log in</a></p>
+      	<% end %>
+      	<% if admin? %>
+      		<p><a href="/blog/posts/new">New post</a><p>
+      	<% end %>
+    		<a href="/blog/past">Archive</a>
+      </div>
+    	<% if not posts.empty? %>
+    	  <% posts.each do |post| %>
+        	<div class="post">
+        		<h2 class="title"><a href="<%= post.url %>"><%= post[:title] %></a></h2>
+        		<p class="date"><%= post[:created_at].strftime("%B %d, %Y") %></p>
+        		<div class="entry">
+        			<%= post.summary_html %>
+        			<% if post.more? %>
+        				<a href="<%= post.url %>">Continue reading &raquo;</a>
+        			<% end %>
+        		</div>
+        	</div>
+      	<%end%>
     	<% end %>
     </div>
   </div>
