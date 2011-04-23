@@ -118,8 +118,7 @@ end
 #---------------------------------------------------------------------------------------------------------
 post '/blog/posts' do
 	auth
-	post = Post.new(:title => params[:title], :tags => params[:tags], :body => params[:body], 
-	  :created_at => Time.now, :slug => Post.make_slug(params[:title]))
+	post = Post.new(:title => params[:title], :body => params[:body], :created_at => Time.now, :slug => Post.make_slug(params[:title]))
 	post.save
 	redirect post.url
 end
@@ -138,7 +137,6 @@ post '/blog/past/:year/:month/:day/:slug/' do
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post
 	post.title = params[:title]
-	post.tags = params[:tags]
 	post.body = params[:body]
 	post.save
 	redirect post.url

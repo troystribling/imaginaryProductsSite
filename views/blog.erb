@@ -22,7 +22,6 @@
   <div id="page-wrapper">
     <div id="page">
       <div id="post-navigation">
-<%p admin?%>        
       	<% if posts.empty? and not admin?%>
       		<p><a href="/blog/auth">Log in</a></p>
       	<% end %>
@@ -33,19 +32,28 @@
       </div>
     	<% if not posts.empty? %>
     	  <% posts.each do |post| %>
-        	<div class="post">
-        		<h2 class="title"><a href="<%= post.url %>"><%= post[:title] %></a></h2>
-        		<p class="date"><%= post[:created_at].strftime("%B %d, %Y") %></p>
-        		<div class="entry">
-        			<%= post.summary_html %>
-        			<% if post.more? %>
-        				<a href="<%= post.url %>">Continue reading &raquo;</a>
-        			<% end %>
-        		</div>
+      	  <div class="post-item">
+            <div class="post-date">
+        	    <%= post[:created_at].strftime("%B %d, %Y") %>
+            </div>
+          	<div class="post">
+          		<div class="title">
+          		  <a href="<%= post.url %>"><%= post[:title] %></a>
+          		</div>
+          		<div class="entry">
+          			<%= post.summary_html %>
+          			<% if post.more? %>
+          				<a href="<%= post.url %>">more &raquo;</a>
+          			<% end %>
+          		</div>
+        	  </div>
         	</div>
       	<%end%>
     	<% end %>
     </div>
+  </div>
+
+  <div id="footer">
   </div>
 
   <% if Blog.disqus_shortname %>
@@ -64,9 +72,6 @@
   	//]]>
   	</script>
   <% end %>
-
-  <div id="footer">
-  </div>
-
+  
 </body>
 </html>
