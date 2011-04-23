@@ -207,13 +207,13 @@ h1 {
 	font-size: 100%;
 	font-weight: normal;
 }
-.dsq-subscribe-email {
+a.dsq-subscribe-email {
 	font-size: 90%;
 	font-weight: normal;
 	color: #9999a6;
 	text-decoration: none;
 }
-.dsq-subscribe-rss {
+a.dsq-subscribe-rss {
 	font-size: 90%;
 	font-weight: normal;
 	color: #9999a6;
