@@ -199,24 +199,17 @@ h1 {
 	color: #9999a6;
 	text-decoration: none;
 }
-#dsq-reply h3 {
+#dsq-reply h3, #dsq-content h3 {
 	font-size: 125%;
 	font-weight: normal;
 }
-#dsq-content h3 {
-	font-size: 100%;
-	font-weight: normal;
-}
-a.dsq-subscribe-email {
+.dsq-subscribe-email em, a.dsq-subscribe-rss em {
 	font-size: 90%;
 	font-weight: normal;
 	color: #9999a6;
 	text-decoration: none;
 }
-a.dsq-subscribe-rss {
-	font-size: 90%;
-	font-weight: normal;
-	color: #9999a6;
+a.dsq-brlink {
 	text-decoration: none;
 }
 
