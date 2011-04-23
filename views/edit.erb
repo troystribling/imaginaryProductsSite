@@ -2,9 +2,9 @@
   <form action="<%= url %>" method="post" name="edit">
   <div class="postzoom">
   	<input class="title" type="text" name="title" value="<%= post.title %>" />
-  	<p class="meta"><%= post.created_at %></p>
+  	<p class="date"><%= post.created_at %></p>
   	<textarea class="entry" name="body"><%= post.body %></textarea>
-  	<div class="edit"><input type="submit" value="Save" /></div>
+  	<input class="edit" type="submit" value="save"/>
   </div>
   </form>
 <% end %>  

@@ -13,6 +13,10 @@ a:hover {
 hr {
 	display: none;
 }
+h1 {
+    font-weight: normal;
+    font-size: 150%;
+}
 
 /******* navigation *******/
 #navigation-wrapper {
@@ -78,18 +82,18 @@ hr {
     float: left;
     text-align: left;
 }
-.post-date {
+.post-item .date {
 	float: left;
 	margin: 0;
-	margin-top: 3px;
+	margin-top: 53px;
 	text-align: left;
-    width: 150;
+    width: 195;
 	font-size: 80%;
-	color: #979680;
+	color: #9999a6;
 }
 .post {
-    float: right;
-    width: 588px;
+    float: left;
+    width: 500px;
 	margin: 0;
     margin-right: 25;
     text-align: left;
@@ -103,20 +107,22 @@ hr {
 	text-decoration: none;
 	color: #000;
 }
-.post .meta {
+.post .date {
 	margin: 0;
-	padding: 0;
-	line-height:normal;
-	text-transform: uppercase;
-	color: #979680;
-}
-.post .meta a {
-	color: #828170;
-	text-decoration: none;
+	margin-top: 53px;
+	text-align: left;
+    width: 195;
+	font-size: 80%;
+	color: #9999a6;
 }
 .post .entry {
 	margin: 0;
 	padding: 0;
+	font-size: 85%;
+}
+.post .more {
+	color: #008E27;
+	text-decoration: none;
 }
 
 /******* postzoom *******/
@@ -143,14 +149,13 @@ hr {
 	padding: 0;
 	font-size: 1em;
 	margin-top: 30px;
-	padding-top: 10px;
-	padding-bottom: 20px;
 	display: block;
 	width: 700px;
 	height: 450px;
 }
 .postzoom .edit {
-	text-align: right;
+	width: 75px;
+	font-size: 1em;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -174,14 +179,21 @@ hr {
 
 /******* archive *******/
 .archive .date {
-	font-size: 85%;
-	color: #828170;
+	font-size: 100%;
+	color: #9999a6;
 }
 
 .archive .title a {
 	font-size: 120%;
 	text-decoration: none;
-	color: #FFFFDC;
+	padding-left: 20px;
+	color: #000000;
+}
+
+/******* archive *******/
+#disqus_thread {
+	font-size: 1em;
+    clear: left;
 }
 
 /******* code blocks *******/
