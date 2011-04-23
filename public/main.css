@@ -137,7 +137,7 @@ h1 {
 	width: 700px;
 	height: 40px;
 }
-.postzoom .meta {
+.postzoom .date {
 	margin: 0;
 	padding: 0;
 	line-height: normal;
@@ -196,7 +196,7 @@ h1 {
     clear: left;
 }
 #dsq-account-dropdown a {
-	color: #999999;
+	color: #9999a6;
 	text-decoration: none;
 }
 #dsq-reply h3 {
@@ -204,8 +204,18 @@ h1 {
 	font-weight: normal;
 }
 #dsq-content h3 {
-	font-size: 125%;
+	font-size: 100%;
 	font-weight: normal;
+}
+#dsq-subscribe-emal em {
+	font-size: 90%;
+	font-weight: normal;
+	color: #9999a6;
+}
+#dsq-subscribe-rss em {
+	font-size: 90%;
+	font-weight: normal;
+	color: #9999a6;
 }
 
 /******* code blocks *******/
