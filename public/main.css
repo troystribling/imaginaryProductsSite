@@ -190,10 +190,18 @@ h1 {
 	color: #000000;
 }
 
-/******* archive *******/
+/******* disqus *******/
 #disqus_thread {
 	font-size: 1em;
     clear: left;
+}
+#dsq-account-dropdown a {
+	color: #999999;
+	text-decoration: none;
+}
+#dsq-reply h3 {
+	font-size: 125%;
+	font-weight: normal;
 }
 
 /******* code blocks *******/
