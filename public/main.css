@@ -140,9 +140,10 @@ h1 {
 .postzoom .date {
 	margin: 0;
 	padding: 0;
+	margin-top: 30px;
 	line-height: normal;
 	text-transform: uppercase;
-	color: #979680;
+	color: #9999a6;
 }
 .postzoom .entry {
 	margin: 0;
