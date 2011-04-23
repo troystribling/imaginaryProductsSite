@@ -203,6 +203,10 @@ h1 {
 	font-size: 125%;
 	font-weight: normal;
 }
+#dsq-content h3 {
+	font-size: 125%;
+	font-weight: normal;
+}
 
 /******* code blocks *******/
 pre {
