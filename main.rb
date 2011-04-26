@@ -10,7 +10,19 @@ require 'post'
 
 ##########################################################################################################
 class Path
-  BLOG = '/blog'  
+  COMPANY               = '/'
+  PRODUCTS              = '/products' 
+  PRODUCTS_MARS_MISSION = PRODUCTS + '/mars-mission'
+  PRODUCTS_WEB_GNOSUS   = PRODUCTS + '/web-gnosus'
+  BLOG                  = '/blog' 
+  BLOG_EDIT             = BLOG + '/past/:year/:month/:day/:slug/edit'
+  BLOG_POSTS            = BLOG + '/posts'
+  BLOG_POSTS_NEW        = BLOG + '/posts/new'
+  BLOG_PAST             = BLOG + '/past'
+  BLOG_PAST_ITEM        = BLOG + '/past/:year/:month/:day/:slug'
+  BLOG_RSS              = BLOG + '/rss'
+  BLOG_FEED             = BLOG + '/feed'
+  BLOG_AUTH             = BLOG + '/feed'
 end
 
 ##########################################################################################################
@@ -48,27 +60,27 @@ end
 #---------------------------------------------------------------------------------------------------------
 # company
 #---------------------------------------------------------------------------------------------------------
-get '/' do
+get Path::COMPANY do
 	erb :index, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
 # products
 #---------------------------------------------------------------------------------------------------------
-get '/products' do
+get Path::PRODUCTS do
 	erb :products, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
 # blog
 #---------------------------------------------------------------------------------------------------------
-get '/blog' do
+get Path::BLOG do
 	posts = Post.reverse_order(:created_at).limit(10)
 	erb :blog, :locals => { :posts => posts }, :layout => false
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/blog/past/:year/:month/:day/:slug/' do
+get Path::BLOG_PAST_ITEM + '/' do
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post
 	@title = post.title
@@ -76,50 +88,50 @@ get '/blog/past/:year/:month/:day/:slug/' do
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/blog/past/:year/:month/:day/:slug' do
-	redirect "/blog/past/#{params[:year]}/#{params[:month]}/#{params[:day]}/#{params[:slug]}/", 301
+get Path::BLOG_PAST_ITEM do
+	redirect "#{Path::BLOG_PAST}/#{params[:year]}/#{params[:month]}/#{params[:day]}/#{params[:slug]}/", 301
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/blog/past' do
+get Path::BLOG_PAST do
 	posts = Post.reverse_order(:created_at)
 	@title = "Archive"
 	erb :archive, :locals => { :posts => posts }, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/blog/feed' do
+get Path::BLOG_FEED do
 	@posts = Post.reverse_order(:created_at).limit(20)
 	content_type 'application/atom+xml', :charset => 'utf-8'
 	builder :feed
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/blog/rss' do
-	redirect '/feed', 301
+get Path::BLOG_RSS do
+	redirect Path::BLOG_FEED, 301
 end
 
 #---------------------------------------------------------------------------------------------------------
 # admin
 #---------------------------------------------------------------------------------------------------------
-get '/blog/auth' do
+get Path::BLOG_AUTH do
 	erb :auth, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-post '/blog/auth' do
+post Path::BLOG_AUTH do
 	response.set_cookie(Blog.admin_cookie_key, :value => Blog.admin_cookie_value) if params[:password] == Blog.admin_password
 	redirect '/blog'
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/blog/posts/new' do
+get Path::BLOG_POSTS_NEW do
 	auth
 	erb :new, :locals => {:post => Post.new, :url => '/blog/posts'}, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-post '/blog/posts' do
+post Path::BLOG_POSTS do
 	auth
 	post = Post.new(:title => params[:title], :body => params[:body], :created_at => Time.now, :slug => Post.make_slug(params[:title]))
 	post.save
@@ -127,7 +139,7 @@ post '/blog/posts' do
 end
 
 #---------------------------------------------------------------------------------------------------------
-get '/blog/past/:year/:month/:day/:slug/edit' do
+get Path::BLOG_EDIT do
 	auth
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post
@@ -135,7 +147,7 @@ get '/blog/past/:year/:month/:day/:slug/edit' do
 end
 
 #---------------------------------------------------------------------------------------------------------
-post '/blog/past/:year/:month/:day/:slug/' do
+post Path::BLOG_PAST_ITEM + '/' do
 	auth
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post

@@ -1,5 +1,6 @@
 # default.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
 configuration -v1.2.0
+emk-sinatra-url-for -v0.2.1
 heroku -v1.20.1
 launchy -v0.3.7
 maruku -v0.6.0
@@ -8,6 +9,7 @@ rack -v1.2.2
 rest-client -v1.6.1
 sequel -v3.22.0
 sinatra -v1.2.3
+sinatra-content-for -v0.2
 sqlite3 -v1.3.3
 syntax -v1.0.0
 tilt -v1.2.2

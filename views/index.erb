@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <script src='/jquery-1.5.2.min.js' type='text/javascript' charset='utf-8'></script>
+  <script src='/image-slider.js' type='text/javascript' charset='utf-8'></script>
+<% end %>
 <% content_for :navigation do %>
   <ul>
   <li><a href="/products"><img src="/products.png"></a></li>
@@ -5,4 +9,17 @@
   </ul>
 <% end %>
 <% content_for :page do %>
+  <div id="gallery">
+    <div id="slides">
+      <div class="slide"><img src="mars-mission.png" width="800" height="400" /></div>
+      <div class="slide"><img src="web-gnosus.png" width="800" height="400" /></div>
+    </div>
+    <div id="menu">
+      <ul>
+        <li class="fbar">&nbsp;</li>
+        <li class="menuItem"><a href=""><img src="mars-mission-icon.png" /></a></li>
+        <li class="menuItem"><a href=""><img src="web-gnosus-icon.png" /></a></li>
+      </ul>
+    </div>
+  </div>
 <% end %>
