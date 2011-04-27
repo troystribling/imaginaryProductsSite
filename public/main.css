@@ -274,9 +274,6 @@ pre span.symbol { color: #008B8B; }
 .slide{
 	float:left;
 }
-.slide .relative {
-    position: relative;
-}
 #menu {
     text-align: center;
 }
@@ -302,4 +299,13 @@ li.menuItem a {
 	display:block;
 	height:35px;
 	padding-top:10px;
+}
+
+/******* products *******/
+#products ul{
+	margin:0px;
+	padding:0px;
+}
+li.product{
+	list-style:none;
 }
