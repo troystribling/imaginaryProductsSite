@@ -254,20 +254,28 @@ pre span.regex { color: #DD00DD; }
 pre span.string { color: #DD00DD; }
 pre span.symbol { color: #008B8B; }
 
-/*******  styles *******/
-
+/*******  image gallery *******/
 #gallery{
-	width:800px;
     margin: 0 auto;
+	width:800px;
 	overflow:hidden;
+	-moz-box-shadow:0 0 5px #AAAAAA;
+	-webkit-box-shadow:0 0 5px #AAAAAA;
+	box-shadow:0 0 5px #AAAAAA;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-bottom-radius:15px;
 }
 #slides{
 	height:400px;
-	width:920px;
+	width:800px;
 	overflow:hidden;
 }
 .slide{
 	float:left;
+}
+.slide .relative {
+    position: relative;
 }
 #menu {
     text-align: center;
