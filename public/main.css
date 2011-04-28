@@ -271,8 +271,13 @@ pre span.symbol { color: #008B8B; }
 	width:800px;
 	overflow:hidden;
 }
-.slide{
+.slide {
+	height:400px;
+	width:800px;
 	float:left;
+}
+.slide .relative{
+    position: relative;
 }
 #menu {
     text-align: center;
@@ -302,10 +307,43 @@ li.menuItem a {
 }
 
 /******* products *******/
+#products {
+}
 #products ul{
 	margin:0px;
 	padding:0px;
 }
-li.product{
+#products li.product {
+    height: 150px;
+}
+#products li.product .content {
+    float:left;
+    margin-left: 20px;
+    width: 70%;
+}
+#products li.product .app-store {
+    float:right;
+    margin-right: 20px;
+}
+#products li.product .content h1 {
+    font-size: 125%;
+    font-weight: normal;
+}
+#products li.product .content p {
+}
+#products li.product .icon {
+    margin-top: 25px;
+    margin-left: 10px;
+    float:left;
+}
+#products li.product{
+    margin-bottom: 10px;
 	list-style:none;
+    -moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-bottom-radius:15px;
+    border-style:solid;
+    border-width:1px;
+    border-color:#DDD;
+    clear:; right;
 }
