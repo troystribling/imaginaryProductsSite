@@ -314,27 +314,38 @@ li.menuItem a {
 	padding:0px;
 }
 #products li.product {
-    height: 150px;
 }
-#products li.product .content {
+#products li.product .icon {
+    margin-left: 10px;
     float:left;
-    margin-left: 20px;
-    width: 70%;
 }
 #products li.product .app-store {
     float:right;
     margin-right: 20px;
 }
+#products li.product .content {
+    float:left;
+    margin-left: 20px;
+    width: 70%;
+    clear right;
+}
 #products li.product .content h1 {
-    font-size: 125%;
+	color: #008E27;
+    font-size: 120%;
     font-weight: normal;
 }
 #products li.product .content p {
+    margin: 0px;
+    font-size: 85%;
 }
-#products li.product .icon {
-    margin-top: 25px;
-    margin-left: 10px;
-    float:left;
+#products li.product .content .more {
+    margin: 0px;
+    margin-top: 10px;
+}
+#products li.product .content .more a {
+    text-decoration: none;
+	color: #AAA;
+    font-size: 85%;
 }
 #products li.product{
     margin-bottom: 10px;
