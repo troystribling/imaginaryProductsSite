@@ -124,6 +124,12 @@ h1 {
 	color: #008E27;
 	text-decoration: none;
 }
+.blog-space {
+	margin: 0 auto;
+    height: 20px;
+    width: 1000px;
+    clear: left;
+}
 
 /******* postzoom *******/
 .postzoom {
@@ -163,12 +169,21 @@ h1 {
 }
 
 /******* footer *******/
-#footer {
+#footer-wrapper {
 	margin: 0 auto;
+	border-top: 1px solid #AAA;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+    width: 1000px;
     clear: left;
+}
+#footer {
 	color: #FFFFFF;
+}
+#footer .twitter {
+	float: right;
 }
 #legal {
 	clear: both;
