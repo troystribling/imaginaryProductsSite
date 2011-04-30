@@ -9,8 +9,17 @@ $(document).ready(function(){
 			return false;
 		}
 	});
+    var current=1;
+    function autoAdvance() {
+        if(current==-1) return false;
+        $('#menu ul li a').eq(current % $('#menu ul li a').length).trigger('click', [true]);   
+        current++;
+    }
+    var changeEvery = 10;
+    var intval = setInterval(function(){autoAdvance()},changeEvery*1000);
 	$('#slides').width(totWidth);
-	$('#menu ul li a').click(function(e){
+	$('#menu ul li a').click(function(e, args){
+	    if (!args) {clearInterval(intval);}
 		$('li.menuItem').removeClass('act').addClass('inact');
 		$(this).parent().addClass('act');
 		var pos = $(this).parent().prevAll('.menuItem').length;
