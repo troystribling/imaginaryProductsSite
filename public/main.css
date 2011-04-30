@@ -1,5 +1,6 @@
 /******* global *******/
 body {
+    background-image:url('background.png');
     font-family: arial, verdana, helvetica, sans-serif;
     font-size: 20px;
     margin: 0px;
@@ -53,7 +54,7 @@ h1 {
 /******* page *******/
 #page-wrapper {
     margin: 0 auto;
-    margin-top: 75px;
+    margin-top: 70px;
     width: 1000px;
     text-align: left;
 }
@@ -323,6 +324,7 @@ li.menuItem a {
 
 /******* products *******/
 #products {
+    min-height:505px;
 }
 #products ul{
 	margin:0px;
