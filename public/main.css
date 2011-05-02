@@ -176,6 +176,7 @@ h1 {
 #footer-wrapper {
     background-image: url('footer-background.png');
 	margin-top: 10px;
+	height: 80px;
     clear: left;
 	color: #FFFFFF;
 }
@@ -183,7 +184,6 @@ h1 {
 	padding-top: 20px;
 	margin: 0 auto;
     width: 1000px;
-	height: 85px;
 }
 #footer .twitter {
 	float: right;
@@ -201,7 +201,6 @@ h1 {
 	font-size: 100%;
 	color: #9999a6;
 }
-
 .archive .title a {
 	font-size: 120%;
 	text-decoration: none;
