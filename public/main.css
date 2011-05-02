@@ -1,6 +1,6 @@
 /******* global *******/
 body {
-    background-image:url('background.png');
+    background-image: url('background.png');
     font-family: arial, verdana, helvetica, sans-serif;
     font-size: 20px;
     margin: 0px;
@@ -21,10 +21,7 @@ h1 {
 
 /******* navigation *******/
 #navigation-wrapper {
-    color: #000;
-    background-image:url('background.png');
-    background-color: #FFF;
-    margin-bottom: 30px;
+    padding-bottom: 60px;
     height: 50px;
     font-weight: lighter;
     letter-spacing: -1px;
@@ -54,13 +51,11 @@ h1 {
 
 /******* page *******/
 #page-wrapper {
-    margin: 0 auto;
-    margin-top: 70px;
-    width: 1000px;
     text-align: left;
 }
 #page {
-    margin: 0px;
+    width: 1000px;
+    margin: 0 auto;
 }
 
 /******* post *******/
@@ -179,17 +174,16 @@ h1 {
 
 /******* footer *******/
 #footer-wrapper {
-	margin: 0 auto;
-	border-top: 1px solid #AAA;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-    width: 1000px;
+    background-image: url('footer-background.png');
+	margin-top: 10px;
     clear: left;
+	color: #FFFFFF;
 }
 #footer {
-	color: #FFFFFF;
+	padding-top: 20px;
+	margin: 0 auto;
+    width: 1000px;
+	height: 85px;
 }
 #footer .twitter {
 	float: right;
@@ -197,7 +191,7 @@ h1 {
 #legal {
 	clear: both;
 	margin: 0;
-	padding: 10px 0;
+	padding: 10px;
 	font-size: 10px;
 	color: #525252;
 }
