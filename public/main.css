@@ -176,12 +176,12 @@ h1 {
 #footer-wrapper {
     background-image: url('footer-background.png');
 	margin-top: 10px;
-	height: 80px;
+	padding-top: 20px;
+	height: 55px;
     clear: left;
 	color: #FFFFFF;
 }
 #footer {
-	padding-top: 20px;
 	margin: 0 auto;
     width: 1000px;
 }
@@ -326,6 +326,8 @@ li.menuItem a {
 /******* products *******/
 #products {
     min-height:505px;
+    margin: 0 auto;
+    width: 800px;
 }
 #products ul{
 	margin:0px;
@@ -344,7 +346,7 @@ li.menuItem a {
 #products li.product .content {
     float:left;
     margin-left: 20px;
-    width: 72%;
+    width: 65%;
     clear right;
 }
 #products li.product .content h1 {
