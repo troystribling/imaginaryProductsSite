@@ -15,8 +15,8 @@ function setPageSize() {
     if (doc_height == win_height) {
         var footer_padding = $('#footer-wrapper').css('padding-top').slice(0, -2),
             footer_margin  = $('#footer-wrapper').css('margin-top').slice(0, -2),
-            footer_height  = doc_height - page_height - nav_height - nav_padding - footer_padding - footer_margin + 3;
-        $('#footer-wrapper').height(footer_height);
+            page_height  = doc_height - footer_height - nav_height - nav_padding - footer_padding - footer_margin;
+        $('#page-wrapper').height(page_height);
     }
     $('#page').width(page_width);
     $('#navigation').width(page_width);
