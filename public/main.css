@@ -40,16 +40,18 @@ h1 {
     float: right;
     margin-top: 0px;
     margin-bottom: 0px;
+    padding-right: 20px;
 }
 #navigation li {
     display: inline;
     font-size: 1.0em;
     margin: 0px;
-    margin-left: 15px;
+    margin-left: 10px;
 } 
 #navigation .logo {
     float: left;
     padding: 0px;
+    padding-left: 20px;
     margin: 0px;
 }
 
@@ -68,8 +70,8 @@ h1 {
 
 /******* post *******/
 #post-navigation {
-    margin: 0 auto;
 	margin-top: 2px;
+    margin-right: 20px;
     width: 212px;
     float: right;
     text-align: left;
@@ -89,6 +91,7 @@ h1 {
 	border: 1px solid #AAA;
     margin: 0 auto;
     margin-bottom: 40px;
+    margin-left: 20px;
     padding: 20px;
     width: 700px;
     float: left;
@@ -195,6 +198,10 @@ h1 {
 }
 #footer .twitter {
 	float: right;
+}
+#footer .twitter a img {
+	float: right;
+	padding-right: 20px;
 }
 #legal {
 	clear: both;
