@@ -16,6 +16,9 @@ function setPageSize() {
         var footer_padding = $('#footer-wrapper').css('padding-top').slice(0, -2),
             footer_margin  = $('#footer-wrapper').css('margin-top').slice(0, -2),
             page_height  = doc_height - footer_height - nav_height - nav_padding - footer_padding - footer_margin;
+        if (win_width >= 800 && win_width < 1000) {
+            page_height += 15;
+        }
         $('#page-wrapper').height(page_height);
     }
     $('#page').width(page_width);

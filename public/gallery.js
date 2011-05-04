@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    setPageSize();
 	var totWidth=0;
 	var positions = new Array();
 	$('#slides .slide').each(function(i){

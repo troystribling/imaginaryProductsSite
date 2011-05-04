@@ -295,6 +295,7 @@ pre span.symbol { color: #008B8B; }
     margin: 0 auto;
 	width: 800px;
 	overflow: hidden;
+    text-align: center;
 	-moz-box-shadow: 0 0 5px #AAAAAA;
 	-webkit-box-shadow: 0 0 5px #AAAAAA;
 	box-shadow: 0 0 25px #888;
@@ -303,6 +304,7 @@ pre span.symbol { color: #008B8B; }
 	border-bottom-radius: 15px;
 }
 #slides{
+    text-align: left;
 	height: 400px;
 	width: 800px;
 	overflow: hidden;
