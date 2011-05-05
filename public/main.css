@@ -24,7 +24,7 @@ h1 {
 
 /******* navigation *******/
 #navigation-wrapper {
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     height: 50px;
     font-weight: lighter;
     letter-spacing: -1px;
@@ -50,11 +50,11 @@ h1 {
 } 
 #navigation li a {
     text-decoration: none;
-    color: #666;
-    text-shadow: 1px 1px 1px #fff;
+    color: #777;
+    text-shadow: 1px 1px 2px #fff;
 } 
 #navigation li a:hover {
-    color: #2554a5;
+    color: #5c82bd;
     text-decoration: none;
 } 
 #navigation li a:visited {
@@ -64,7 +64,8 @@ h1 {
     text-decoration: none;
 } 
 #navigation li.selected {
-    color: #2554a5;
+    color: #5c82bd;
+    text-shadow: 1px 1px 2px #fff;
 } 
 #navigation .logo {
     float: left;
@@ -213,8 +214,8 @@ h1 {
 	color: #FFFFFF;
 }
 #footer {
-	margin: 0 auto;
-    width: 1000px;
+  margin: 0 auto;
+  width: 1000px;
 }
 #footer .twitter {
 	float: right;
@@ -312,6 +313,7 @@ pre span.symbol { color: #008B8B; }
 /*******  image gallery *******/
 #gallery{
     margin: 0 auto;
+    margin-top: 0px;
 	width: 800px;
 	overflow: hidden;
     text-align: center;
