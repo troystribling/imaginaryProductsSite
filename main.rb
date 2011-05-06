@@ -14,6 +14,9 @@ class Path
   PRODUCTS              = '/products' 
   PRODUCTS_MARS_MISSION = PRODUCTS + '/mars-mission'
   PRODUCTS_WEB_GNOSUS   = PRODUCTS + '/web-gnosus'
+  PROJECTS              = '/projects' 
+  PROJECTS_AGENT_XMPP   = PROJECTS + '/agent-xmpp'
+  PROJECTS_ZGOMOT       = PROJECTS + '/zgomot'
   BLOG                  = '/blog' 
   BLOG_EDIT             = BLOG + '/past/:year/:month/:day/:slug/edit'
   BLOG_POSTS            = BLOG + '/posts'
@@ -79,6 +82,30 @@ end
 #---------------------------------------------------------------------------------------------------------
 get Path::PRODUCTS_WEB_GNOSUS do
 	erb :web_gnosus, :layout => :layout
+end
+
+#---------------------------------------------------------------------------------------------------------
+# projects
+#---------------------------------------------------------------------------------------------------------
+get Path::PROJECTS do
+	erb :projects, :layout => :layout
+end
+
+#---------------------------------------------------------------------------------------------------------
+# projects
+#---------------------------------------------------------------------------------------------------------
+get Path::PROJECTS do
+	erb :projects, :layout => :layout
+end
+
+#---------------------------------------------------------------------------------------------------------
+get Path::PROJECTS_AGENT_XMPP do
+	erb :agent_xmpp, :layout => :layout
+end
+
+#---------------------------------------------------------------------------------------------------------
+get Path::PROJECTS_ZGOMOT do
+	erb :zgomot, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------

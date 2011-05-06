@@ -29,7 +29,7 @@
   </div>
 
   <div id="page-wrapper">
-    <div id="page">
+    <div id="page" style="padding-top: 30px;">
       <div id="post-navigation">
       	<% if posts.empty? and not admin?%>
       		<p><a href="/blog/auth">Log in</a></p>
@@ -64,11 +64,16 @@
 
   <div id="footer-wrapper">
     <div id="footer">
-      <div class="twitter">
-        <a href="http://www.twitter.com/imaginaryprod">
-          <img src="/t_logo-c.png" alt="Follow imaginaryprod on Twitter"/>
-        </a>
-      </div>
+      <ul>
+        <li>
+          <img src="/email.png" alt="email imaginaryProducts"/>
+        </li>
+        <li>
+          <a href="http://www.twitter.com/imaginaryprod">
+            <img src="/twitter.png" alt="Follow imaginaryprod on Twitter"/>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 

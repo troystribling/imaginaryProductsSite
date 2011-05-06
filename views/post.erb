@@ -1,17 +1,18 @@
 <% content_for :navigation do %>
   <ul>
-  <li><a href="/products"><img src="/products.png"></a></li>
-  <li><a href="/blog"><img src="/blog.png"></a></li>
+    <li><a href="/products">products</a></li>
+    <li><a href="/projects">projects</a></li>
+    <li><a href="/blog">blog</a></li>
   </ul>
 <% end %>
 <% content_for :page do %>
-  <div id="post-navigation">
+  <div id="post-navigation" style="margin-top: 30px;">
    	<% if admin? %>
     		<div class="edit"><a href="<%= post.url %>edit">Edit</a></div>
     	<% end %>
   	<a href="/blog/past">Archive</a>
   </div>
-  <div class="post-item">
+  <div class="post-item" style="margin-top: 30px;">
     <div class="date">
       <%= post[:created_at].strftime("%B %d, %Y") %>
     </div>

@@ -217,13 +217,20 @@ h1 {
   margin: 0 auto;
   width: 1000px;
 }
-#footer .twitter {
-	float: right;
+#footer ul {
+    margin: 0;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
 }
-#footer .twitter a img {
-	float: right;
-	padding-right: 20px;
-}
+#footer li {
+    display: inline;
+    margin: 0px;
+    margin-left: 10px;
+} 
+#footer li a {
+    text-decoration: none;
+} 
 #legal {
 	clear: both;
 	margin: 0;
@@ -370,6 +377,7 @@ li.menuItem a {
 /******* products *******/
 #products {
     margin: 0 auto;
+    padding-top: 30px;
     width: 800px;
 }
 #products ul{

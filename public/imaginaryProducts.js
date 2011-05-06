@@ -5,7 +5,7 @@ function setPageSize() {
         win_width     = $(window).width(),
         nav_height    = $('#navigation-wrapper').height(),
         nav_padding   = $('#navigation-wrapper').css('padding-bottom').slice(0, -2),
-        footer_height = $('#footer-wrapper').height() - 1,
+        footer_height = $('#footer-wrapper').height(),
         footer_padding = $('#footer-wrapper').css('padding-top').slice(0, -2),
         footer_margin  = $('#footer-wrapper').css('margin-top').slice(0, -2),
         page_width    = 1000;    
@@ -25,10 +25,12 @@ function setPageSize() {
     $('#navigation').width(page_width);
     $('#footer').width(page_width);
     
-    var gallery = $('#gallery')
+    var gallery = $('#gallery').height()
     if (gallery) {
+        var page_height = $('#page-wrapper').height() + 1;
+        $('#page-wrapper').height(page_height);
         var padding_top = 2 * (page_height - 500) / 5;
         $('#page-wrapper').css('padding-top', padding_top)
         $('#page-wrapper').height(page_height - padding_top);
-    }
+    } 
 }
