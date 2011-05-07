@@ -54,7 +54,7 @@ h1 {
     text-shadow: 1px 1px 2px #fff;
 } 
 #navigation li a:hover {
-    color: #5c82bd;
+    color: #6e99d8;
     text-decoration: none;
 } 
 #navigation li a:visited {
@@ -64,7 +64,7 @@ h1 {
     text-decoration: none;
 } 
 #navigation li.selected {
-    color: #5c82bd;
+    color: #6e99d8;
     text-shadow: 1px 1px 2px #fff;
 } 
 #navigation .logo {
@@ -104,7 +104,30 @@ h1 {
 #post-navigation p {
     margin: 0;
     margin-bottom: 10px;
+    margin-left: 13px;
+    text-shadow: 1px 1px 2px #fff;
 }
+#post-navigation p a {
+    color: #999;
+}
+#post-navigation ul {
+    margin: 0;
+    padding:0;
+    margin-left: 10px;
+    list-style-type: none;
+}
+#post-navigation li {
+    margin: 0px;
+} 
+#post-navigation li.rss{
+} 
+#post-navigation li.email{
+} 
+#post-navigation li.twitter{
+} 
+#post-navigation li a {
+    text-decoration: none;
+} 
 .post-item {
     background-color: #FFF;
     -moz-border-radius: 15px;
@@ -141,7 +164,7 @@ h1 {
 }
 .post .title a {
 	text-decoration: none;
-	color: #000;
+    color: #6e99d8;
 }
 .post .date {
 	margin: 0;
@@ -157,7 +180,7 @@ h1 {
 	font-size: 85%;
 }
 .post .more {
-	color: #008E27;
+    color: #AAA;
 	text-decoration: none;
 }
 .blog-space {
@@ -222,11 +245,18 @@ h1 {
     list-style-type: none;
     float: right;
     margin-bottom: 20px;
+    margin-right: 20px;
 }
 #footer li {
     display: inline;
     margin: 0px;
     margin-left: 10px;
+} 
+#footer li.rss{
+} 
+#footer li.email{
+} 
+#footer li.twitter{
 } 
 #footer li a {
     text-decoration: none;
@@ -401,7 +431,7 @@ li.menuItem a {
     clear right;
 }
 #products li.product .content h1 {
-	color: #008E27;
+	color: #6e99d8;
     font-size: 120%;
     font-weight: normal;
     margin-top: 20px;
