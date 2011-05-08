@@ -2,6 +2,7 @@
 $:.unshift(File.dirname(__FILE__))
 require 'rubygems'
 require 'sinatra'
+require 'builder'
 require 'sinatra/content_for'
 require 'sequel'
 require 'maruku'
@@ -23,18 +24,19 @@ class Path
   BLOG_POSTS_NEW        = BLOG + '/posts/new'
   BLOG_PAST             = BLOG + '/past'
   BLOG_PAST_ITEM        = BLOG + '/past/:year/:month/:day/:slug'
-  BLOG_RSS              = BLOG + '/rss'
   BLOG_FEED             = BLOG + '/feed'
-  BLOG_AUTH             = BLOG + '/feed'
+  BLOG_RSS              = BLOG + '/rss'
+  BLOG_AUTH             = BLOG + '/auth'
 end
 
 ##########################################################################################################
+set :environment, :production
 configure do
 	require 'ostruct'
 	Blog = OpenStruct.new(
 		:title => 'imaginaryProducts',
 		:author => 'imaginaryProducts',
-		:url_base => 'http://imaginaryProducts.com/',
+		:url_base => 'http://imaginaryProducts.com/blog',
 		:admin_password => 'bigGameLLC',
 		:admin_cookie_key => 'ip_admin',
 		:admin_cookie_value => 'lweiueqi828383722289jjkahw31122',
