@@ -6,9 +6,9 @@
   </ul>
 <% end %>
 <% content_for :page do %>
-  <div id="post-navigation" style="margin-top: 30px;">
+  <div id="post-navigation" style="margin-top: 32px;">
    	<% if admin? %>
-    		<div class="edit"><a href="<%= post.url %>edit">Edit</a></div>
+    		<p><a href="<%= post.url %>edit">Edit</a></p>
     	<% end %>
   	<p><a href="/blog/past">Archive</a></p>
     <ul>

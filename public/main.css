@@ -1,4 +1,11 @@
 /******* global *******/
+* {
+    margin:0;
+    padding:0; 
+}
+html, body { 
+    height: 100%;
+}
 body {
     background-image: url('background.png');
     font-family: arial, verdana, helvetica, sans-serif;
@@ -75,14 +82,19 @@ h1 {
     margin: 0px;
 }
 
+/******* content *******/
+#content {
+    min-height: 100%;
+}
 /******* page *******/
 #page-wrapper {
-    text-align: center;
+    overflow: auto;
+    padding-bottom: 75px;
 }
 #page {
     width: 1000px;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 #page h1 {
     margin: 0;
@@ -145,7 +157,7 @@ h1 {
 .post-item .date {
 	float: left;
 	margin: 0;
-	margin-top: 53px;
+	margin-top: 55px;
 	text-align: left;
     width: 20%;
 	font-size: 80%;
@@ -166,18 +178,13 @@ h1 {
 	text-decoration: none;
     color: #5270a3;
 }
-.post .date {
-	margin: 0;
-	margin-top: 53px;
-	text-align: left;
-    width: 195;
-	font-size: 80%;
-	color: #9999a6;
-}
 .post .entry {
 	margin: 0;
 	padding: 0;
 	font-size: 85%;
+}
+.post p {
+	margin-top: 20px;
 }
 .post .more {
     color: #AAA;
@@ -195,12 +202,13 @@ h1 {
 	margin-top: 20px;
 	position: relative;
 }
-.postzoom .title {
+.postzoom title {
 	margin: 0;
 	padding: 0;
 	font-size: 1em;
 	width: 700px;
 	height: 40px;
+    text-align: left;
 }
 .postzoom .date {
 	margin: 0;
@@ -227,20 +235,22 @@ h1 {
 	right: 0;
 }
 
-/******* page *******/
+/******* auth *******/
 #auth {
     margin: 0;
+    text-align: left;
     margin-left: 20px;
     margin-top: 30px;
 }
 
 /******* footer *******/
 #footer-wrapper {
-    background-image: url('footer-background.png');
-	margin-top: 10px;
-	padding-top: 20px;
+    position: relative;
+    margin-top: -75px;
 	height: 55px;
-    clear: left;
+    clear: both;
+    padding-top: 20px;
+    background-image: url('footer-background.png');
 	color: #FFFFFF;
 }
 #footer {
@@ -353,7 +363,12 @@ pre span.string { color: #DD00DD; }
 pre span.symbol { color: #008B8B; }
 
 /*******  image gallery *******/
-#gallery{
+#floater {
+    float:left; 
+    height:50%; 
+    margin-bottom:-330px;
+}
+#gallery {
     margin: 0 auto;
     margin-top: 0px;
 	width: 800px;
@@ -365,8 +380,9 @@ pre span.symbol { color: #008B8B; }
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	border-bottom-radius: 15px;
+    clear: both;
 }
-#slides{
+#slides {
     text-align: left;
 	height: 400px;
 	width: 800px;

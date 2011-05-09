@@ -30,7 +30,7 @@ class Path
 end
 
 ##########################################################################################################
-set :environment, :production
+set :environment, :test
 configure do
 	require 'ostruct'
 	Blog = OpenStruct.new(

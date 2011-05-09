@@ -14,23 +14,7 @@ function setPageSize() {
     } else if (win_width < 1000) {
         page_width = win_width;
     }
-    if (doc_height == win_height) {
-        var page_height  = doc_height - footer_height - nav_height - nav_padding - footer_padding - footer_margin;
-        if (win_width >= 800 && win_width < 1000) {
-            page_height += 15;
-        }
-        $('#page-wrapper').height(page_height);
-    }
     $('#page').width(page_width);
     $('#navigation').width(page_width);
     $('#footer').width(page_width);
-    
-    var gallery = $('#gallery').height()
-    if (gallery) {
-        var page_height = $('#page-wrapper').height() + 1;
-        $('#page-wrapper').height(page_height);
-        var padding_top = 2 * (page_height - 500) / 5;
-        $('#page-wrapper').css('padding-top', padding_top)
-        $('#page-wrapper').height(page_height - padding_top);
-    } 
 }
