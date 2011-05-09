@@ -40,7 +40,7 @@ configure do
 		:admin_password => 'bigGameLLC',
 		:admin_cookie_key => 'ip_admin',
 		:admin_cookie_value => 'lweiueqi828383722289jjkahw31122',
-		:disqus_shortname => 'imaginaryProductsOfficialBlog'
+		:disqus_shortname => 'imaginaryproductsofficialblog'
 	)
 end
 

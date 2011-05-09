@@ -15,13 +15,13 @@
       <li class="rss">
         <img src="/blog-rss.png" alt="rss imaginaryProducts"/>
       </li>
+      <li class="email">
+        <img src="/blog-email.png" alt="email imaginaryProducts"/>
+      </li>
       <li class="twitter">
         <a href="http://www.twitter.com/imaginaryprod">
           <img src="/blog-twitter.png" alt="Follow imaginaryprod on Twitter"/>
         </a>
-      </li>
-      <li class="email">
-        <img src="/blog-email.png" alt="email imaginaryProducts"/>
       </li>
     </ul>
   </div>
@@ -37,7 +37,17 @@
     		<%= post.body_html %>
     	</div>
       <% if Blog.disqus_shortname %>
-      	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/<%= Blog.disqus_shortname %>/embed.js"></script><noscript><a href="http://<%= Blog.disqus_shortname %>.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+      	<div id="disqus_thread"></div>
+      	<script type="text/javascript" src="http://disqus.com/forums/<%= Blog.disqus_shortname %>/embed.js"></script>
+        <script type="text/javascript">
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + <%= Blog.disqus_shortname %> + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
       <% end %>
      </div>
   </div>
