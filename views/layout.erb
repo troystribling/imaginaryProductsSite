@@ -8,6 +8,11 @@
   <script src='/jquery-1.5.2.min.js' type='text/javascript' charset='utf-8'></script>
   <script src='/imaginaryProducts.js' type='text/javascript' charset='utf-8'></script>
 	<% yield_content :head %>
+  <!--[if !IE 7]>
+  	<style type="text/css">
+  		#wrap {display:table;height:100%}
+  	</style>
+  <![endif]-->
 </head>
 
 <body>

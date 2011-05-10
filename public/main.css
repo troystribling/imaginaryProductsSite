@@ -98,6 +98,7 @@ h1 {
 }
 #page h1 {
     margin: 0;
+    text-align: left;
     margin-left: 20px;
     margin-bottom: 10px;
 }
@@ -121,6 +122,9 @@ h1 {
 }
 #post-navigation p a {
     color: #999;
+}
+#post-navigation p a:hover {
+    color: #5270a3;
 }
 #post-navigation ul {
     margin: 0;
@@ -201,19 +205,19 @@ h1 {
 .postzoom {
 	margin-top: 20px;
 	position: relative;
+    text-align: left;
 }
-.postzoom title {
+.postzoom input.title {
 	margin: 0;
 	padding: 0;
 	font-size: 1em;
 	width: 700px;
 	height: 40px;
-    text-align: left;
 }
 .postzoom .date {
 	margin: 0;
 	padding: 0;
-	margin-top: 30px;
+	margin-top:10px;
 	line-height: normal;
 	text-transform: uppercase;
 	color: #9999a6;
@@ -222,17 +226,17 @@ h1 {
 	margin: 0;
 	padding: 0;
 	font-size: 1em;
-	margin-top: 30px;
+	margin-top: 10px;
 	display: block;
 	width: 700px;
 	height: 450px;
 }
-.postzoom .edit {
+.postzoom input.edit {
 	width: 75px;
 	font-size: 1em;
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 140;
 }
 
 /******* auth *******/
