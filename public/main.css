@@ -7,7 +7,7 @@ html, body {
     height: 100%;
 }
 body {
-    background-image: url('background.png');
+    background-image: url('/company/background.png');
     font-family: arial, verdana, helvetica, sans-serif;
     font-size: 20px;
     margin: 0px;
@@ -254,7 +254,7 @@ h1 {
 	height: 55px;
     clear: both;
     padding-top: 20px;
-    background-image: url('footer-background.png');
+    background-image: url('/company/footer-background.png');
 	color: #FFFFFF;
 }
 #footer {
@@ -454,6 +454,7 @@ li.menuItem a {
     margin-left: 20px;
     width: 65%;
     clear right;
+    text-align: left;
 }
 #products li.product .content h1 {
 	color: #5270a3;
