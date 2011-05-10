@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">  
 </head>
 
-<body>
+<body style="background-image: url('/company/background.png');">
   
   <script type="text/javascript">
     $(document).ready(function() {
@@ -18,67 +18,69 @@
     });
   </script>
   
-  <div id="navigation-wrapper">
-  	<div id="navigation">
-     	<a href="/"><img src="/company/imaginaryProducts-name.png" class="logo"></a>
-      <ul>
-        <li><a href="/products">products</a></li>
-        <li><a href="/projects">projects</a></li>
-        <li class="selected">blog</li>
-      </ul>
-  	</div>
-  </div>
-
-  <div id="page-wrapper">
-    <div id="page" style="padding-top: 30px;">
-      <div id="post-navigation">
-      	<% if posts.empty? and not admin?%>
-      		<p><a href="/blog/auth">Log in</a></p>
-      	<% end %>
-      	<% if admin? %>
-      		<p><a href="/blog/posts/new">New Post</a><p>
-      	<% end %>
-    		<p><a href="/blog/past">Archive</a></p>
+  <div id="content">
+    <div id="navigation-wrapper">
+    	<div id="navigation">
+       	<a href="/"><img src="/company/imaginaryProducts-name.png" class="logo"></a>
         <ul>
-          <li class="rss">
-            <a href="/blog/rss">
-              <img src="/company/blog-rss.png" alt="rss imaginaryProducts"/>
-            </a>
-          </li>
-          <li class="email">
-            <img src="/company/blog-email.png" alt="email imaginaryProducts"/>
-          </li>
-          <li class="twitter">
-            <a href="http://www.twitter.com/imaginaryprod">
-              <img src="/company/blog-twitter.png" alt="Follow imaginaryprod on Twitter"/>
-            </a>
-          </li>
+          <li><a href="/products">products</a></li>
+          <li><a href="/projects">projects</a></li>
+          <li class="selected">blog</li>
         </ul>
+    	</div>
+    </div>
+
+    <div id="page-wrapper">
+      <div id="page" style="padding-top: 30px;">
+        <div id="post-navigation">
+        	<% if posts.empty? and not admin?%>
+        		<p><a href="/blog/auth">Log in</a></p>
+        	<% end %>
+        	<% if admin? %>
+        		<p><a href="/blog/posts/new">New Post</a><p>
+        	<% end %>
+      		<p><a href="/blog/past">Archive</a></p>
+          <ul>
+            <li class="rss">
+              <a href="/blog/rss">
+                <img src="/company/blog-rss.png" alt="rss imaginaryProducts"/>
+              </a>
+            </li>
+            <li class="email">
+              <img src="/company/blog-email.png" alt="email imaginaryProducts"/>
+            </li>
+            <li class="twitter">
+              <a href="http://www.twitter.com/imaginaryprod">
+                <img src="/company/blog-twitter.png" alt="Follow imaginaryprod on Twitter"/>
+              </a>
+            </li>
+          </ul>
+        </div>
+      	<% if not posts.empty? %>
+      	  <% posts.each do |post| %>
+        	  <div class="post-item">
+              <div class="date">
+          	    <%= post[:created_at].strftime("%b %d, %Y") %>
+              </div>
+            	<div class="post">
+            		<div class="title">
+            		  <a href="<%= post.url %>"><%= post[:title] %></a>
+            		</div>
+            		<div class="entry">
+            			<%= post.summary_html %>
+            		</div>
+          			<% if post.more? %>
+          				<p><a class="more" href="<%= post.url %>">read more &raquo;</a></p>
+          			<% end %>
+          	  </div>
+          	</div>
+        	<%end%>
+        <% end %>
       </div>
-    	<% if not posts.empty? %>
-    	  <% posts.each do |post| %>
-      	  <div class="post-item">
-            <div class="date">
-        	    <%= post[:created_at].strftime("%b %d, %Y") %>
-            </div>
-          	<div class="post">
-          		<div class="title">
-          		  <a href="<%= post.url %>"><%= post[:title] %></a>
-          		</div>
-          		<div class="entry">
-          			<%= post.summary_html %>
-          		</div>
-        			<% if post.more? %>
-        				<p><a class="more" href="<%= post.url %>">read more &raquo;</a></p>
-        			<% end %>
-        	  </div>
-        	</div>
-      	<%end%>
-      <% end %>
     </div>
   </div>
 
-  <div id="footer-wrapper">
+  <div id="footer-wrapper" style="background-image: url('/company/footer-background.png');">
     <div id="footer">
       <ul>
         <li class="email">

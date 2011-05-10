@@ -7,7 +7,6 @@ html, body {
     height: 100%;
 }
 body {
-    background-image: url('/company/background.png');
     font-family: arial, verdana, helvetica, sans-serif;
     font-size: 20px;
     margin: 0px;
@@ -254,12 +253,17 @@ h1 {
 	height: 55px;
     clear: both;
     padding-top: 20px;
-    background-image: url('/company/footer-background.png');
 	color: #FFFFFF;
 }
 #footer {
   margin: 0 auto;
   width: 1000px;
+}
+#footer .logo {
+    margin: 0;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 #footer ul {
     margin: 0;
