@@ -8,6 +8,7 @@ html, body {
 }
 body {
     font-family: arial, verdana, helvetica, sans-serif;
+    background-color: #FFF;
     font-size: 20px;
     margin: 0px;
 }
@@ -263,7 +264,7 @@ h1 {
     margin: 0;
     float: left;
     margin-bottom: 20px;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 #footer ul {
     margin: 0;
