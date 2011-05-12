@@ -57,11 +57,12 @@ h1 {
 } 
 #navigation li a {
     text-decoration: none;
-    color: #747474;
-    text-shadow: 1px 1px 2px #fff;
+    color: #000;
+    text-shadow: 0px 0px 4px #666;
 } 
 #navigation li a:hover {
-    color: #5270a3;
+    color: #808080;
+    text-shadow: 0px 0px 3px #999;
     text-decoration: none;
 } 
 #navigation li a:visited {
@@ -71,8 +72,8 @@ h1 {
     text-decoration: none;
 } 
 #navigation li.selected {
-    color: #5270a3;
-    text-shadow: 1px 1px 2px #fff;
+    color: #888;
+    text-shadow: 0px 0px 3px #999;
 } 
 #navigation .logo {
     float: left;
@@ -118,13 +119,15 @@ h1 {
     margin: 0;
     margin-bottom: 10px;
     margin-left: 13px;
-    text-shadow: 1px 1px 2px #fff;
+    color: #000;
+    text-shadow: 0px 0px 4px #666;
 }
 #post-navigation p a {
-    color: #999;
+    color: #000;
 }
 #post-navigation p a:hover {
-    color: #5270a3;
+    color: #777;
+    text-shadow: 0px 0px 3px #888;
 }
 #post-navigation ul {
     margin: 0;
@@ -150,6 +153,9 @@ h1 {
 	-webkit-border-radius: 15px;
 	border-bottom-radius: 15px;
 	border: 1px solid #AAA;
+	-moz-box-shadow: 0 0 15px #BBB;
+	-webkit-box-shadow: 0 0 15px #BBB;
+	box-shadow: 0 0 15px #BBB;
     margin: 0 auto;
     margin-bottom: 40px;
     margin-left: 20px;
@@ -165,7 +171,7 @@ h1 {
 	text-align: left;
     width: 20%;
 	font-size: 80%;
-	color: #9999a6;
+	color: #AAA;
 }
 .post {
     float: left;
@@ -180,7 +186,7 @@ h1 {
 }
 .post .title a {
 	text-decoration: none;
-    color: #5270a3;
+    color: #696;
 }
 .post .entry {
 	margin: 0;
@@ -379,13 +385,13 @@ pre span.symbol { color: #008B8B; }
 }
 #gallery {
     margin: 0 auto;
-    margin-top: 0px;
+    margin-top: 20px;
 	width: 800px;
 	overflow: hidden;
     text-align: center;
-	-moz-box-shadow: 0 0 5px #AAAAAA;
-	-webkit-box-shadow: 0 0 5px #AAAAAA;
-	box-shadow: 0 0 25px #888;
+	-moz-box-shadow: 0 0 25px #666;
+	-webkit-box-shadow: 0 0 25px #666;
+	box-shadow: 0 0 25px #666;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	border-bottom-radius: 15px;
@@ -462,7 +468,7 @@ li.menuItem a {
     text-align: left;
 }
 #products li.product .content h1 {
-	color: #5270a3;
+	color: #696;
     font-size: 120%;
     font-weight: normal;
     margin-top: 20px;
@@ -489,7 +495,9 @@ li.menuItem a {
     -moz-border-radius:15px;
 	-webkit-border-radius:15px;
 	border-bottom-radius:15px;
-	box-shadow:0 0 25px #888;
+	-moz-box-shadow: 0 0 15px #BBB;
+	-webkit-box-shadow: 0 0 15px #BBB;
+	box-shadow: 0 0 15px #BBB;
     border-style:solid;
     border-width:1px;
     border-color:#DDD;
