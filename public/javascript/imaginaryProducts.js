@@ -1,5 +1,6 @@
 function setPageWidth() {
-  var win_width     = $(window).width();    
+  var win_width   = $(window).width(),
+      page_width  = 1000;   
   if (win_width < 800) {
       page_width = 800;
   } else if (win_width < 1000) {

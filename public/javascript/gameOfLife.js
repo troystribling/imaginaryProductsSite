@@ -14,14 +14,6 @@ Array.matrix = function (m, n, initial) {
 }
 
 /**********************************************************************************
-cell object
-**********************************************************************************/
-function Cell(row, column) {
-  this.row = row;
-  this.column = column;
-}
-
-/**********************************************************************************
 game
 **********************************************************************************/
 Life = {
@@ -29,12 +21,11 @@ Life = {
   /*-------------------------------------------------------------------------------*/
   DEAD: 0,
   ALIVE: 1,
-  DELAY: 1000,
-  STOPPED: 0,
-  RUNNING: 1,
+  DELAY: 750,
 
   /*-------------------------------------------------------------------------------*/
-  CELL_SIZE: 20,
+  CELL_SIZE: 15,
+  INIT_DEAD: 50,
  
   /*-------------------------------------------------------------------------------*/
   minimum: 2,
@@ -46,6 +37,7 @@ Life = {
   height: null,
   width: null,
   grid: null,
+  cell_image: new Image(),
 
   /*-------------------------------------------------------------------------------*/
   updateState: function() {
@@ -54,7 +46,7 @@ Life = {
     for (var h = 0; h < this.height; h++) {
       for (var w = 0; w < this.width; w++) {
         neighbours = this.calculateNeighbours(h, w);
-        if (grid[h][w] !== DEAD) {
+        if (this.grid[h][w] !== this.DEAD) {
           if ((neighbours >= this.minimum) && (neighbours <= this.maximum)) {
             nextGenerationGrid[h][w] = this.ALIVE;
           }
@@ -68,7 +60,7 @@ Life = {
     this.copyGrid(nextGenerationGrid, this.grid);
   },
   calculateNeighbours: function(y, x) {
-    var total = (grid[y][x] !== DEAD) ? -1 : 0;
+    var total = (this.grid[y][x] !== this.DEAD) ? -1 : 0;
     for (var h = -1; h <= 1; h++) {
       for (var w = -1; w <= 1; w++) {
         if (this.grid[(this.height + (y + h)) % this.height][(this.width + (x + w)) % this.width] !== this.DEAD) {
@@ -78,23 +70,27 @@ Life = {
     }
     return total;
   },
-  initGrid: function() {
-    var doc_height = $(document).height(),
-        doc_width  = $(document).width(),
-        gridCanvas = getCanvas();
-    this.height = Math.floor(doc_height / this.CELL_SIZE) + 1;
-    this.width  = Math.floor(doc_width / this.CELL_SIZE) + 1;
-    gridCanvas.width  = doc_width;
-    gridCanvas.height = doc_height;
+  initLife: function() {
+    var can_height = $(window).height(),
+        can_width  = $(window).width(),
+        gridCanvas = this.getCanvas();
+    this.height = Math.floor(can_height / this.CELL_SIZE) + 1;
+    this.width  = Math.floor(can_width / this.CELL_SIZE) + 1;
+    gridCanvas.width  = can_width;
+    gridCanvas.height = can_height;
     this.grid =  Array.matrix(this.height, this.width, 0);
-    var is_alive = 1;
+    this.initGrid();
+    this.cell_image.onload = function(){startGame();};
+    this.cell_image.src = '/company/life-cell.png';
+  },
+  initGrid: function() {
+    var die;
     for (var h = 0; h < this.height; h++) {
       for (var w = 0; w < this.width; w++) {
-        if (is_alive) {
+        die = Math.floor(100*Math.random());
+        if (die > this.INIT_DEAD) {
           this.grid[h][w] = this.ALIVE
-          is_alive = 0;
         } else {
-          is_alive = 1;
           this.grid[h][w] = this.DEAD
         }
       }
@@ -104,6 +100,31 @@ Life = {
     for (var h = 0; h < this.height; h++) {
       destination[h] = source[h].slice(0);
     }
+  },
+  update: function() {
+    this.updateState();
+    this.updateAnimations();
+  },
+  getCanvas: function() {
+    return document.getElementById("game-of-life");
+  },
+  updateAnimations: function() {
+    var gridCanvas = this.getCanvas(),
+        context = gridCanvas.getContext('2d'),
+        xpos, ypos;
+    for (var h = 0; h < this.height; h++) {
+      for (var w = 0; w < this.width; w++) {
+        xpos = w*this.CELL_SIZE;
+        ypos = h*this.CELL_SIZE;
+        context.clearRect(xpos, ypos , this.CELL_SIZE, this.CELL_SIZE)
+        if (this.grid[h][w] === this.ALIVE) {
+          context.drawImage(this.cell_image, xpos, ypos);
+        } else {
+          context.fillStyle = "#EEE";
+          context.fillRect(xpos, ypos, this.CELL_SIZE, this.CELL_SIZE);
+        }
+      }
+    }
   }
 }
 
@@ -111,52 +132,19 @@ Life = {
 initialize
 **********************************************************************************/
 function gameOfLife() {
-  var gridCanvas = getCanvas();
+  var gridCanvas = Life.getCanvas();
   if (gridCanvas.getContext) {
-    Life.initGrid();
-    startGame();
+    Life.initLife();
   } 
+}
+
+function startGame() {
+  Life.interval = setInterval(function() {
+    Life.update();
+  }, Life.DELAY);
 }
 
 /**********************************************************************************
 game control
 **********************************************************************************/
-function startGame() {
-  Life.interval = setInterval(function() {
-    update();
-  }, Life.DELAY);
-  Life.state = Life.RUNNING;
-}
 
-/*-------------------------------------------------------------------------------*/
-function stopGame() {
-  clearInterval(Life.interval);
-  Life.state = Life.STOPPED;
-}
-
-/*-------------------------------------------------------------------------------*/
-function update() {
-  // Life.updateState();
-  updateAnimations();
-}
-
-/*-------------------------------------------------------------------------------*/
-function getCanvas() {
-  return document.getElementById("game-of-life");
-}
-
-/*-------------------------------------------------------------------------------*/
-function updateAnimations() {
-  var gridCanvas = getCanvas(),
-      context = gridCanvas.getContext('2d');
-  for (var h = 0; h < Life.height; h++) {
-    for (var w = 0; w < Life.width; w++) {
-      if (Life.grid[h][w] === Life.ALIVE) {
-        context.fillStyle = "#DDD";
-      } else {
-        context.fillStyle = "#EEE";
-      }
-      context.fillRect(w*Life.CELL_SIZE, h*Life.CELL_SIZE, Life.CELL_SIZE, Life.CELL_SIZE);
-    }
-  }
-};
