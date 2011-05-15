@@ -71,8 +71,8 @@ Life = {
     return total;
   },
   initLife: function() {
-    var can_height = $(window).height(),
-        can_width  = $(window).width(),
+    var can_height = $(document).height(),
+        can_width  = $(document).width(),
         gridCanvas = this.getCanvas();
     this.height = Math.floor(can_height / this.CELL_SIZE) + 1;
     this.width  = Math.floor(can_width / this.CELL_SIZE) + 1;
