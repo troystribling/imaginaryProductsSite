@@ -19,10 +19,15 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
-      setPageSize();
+      setPageWidth();
     });
+    window.onresize = function() {
+      setPageWidth();
+    }
   </script>
   
+  <% yield_content :canvas %>
+    
   <div id="content">
     <div id="navigation-wrapper">
     	<div id="navigation">

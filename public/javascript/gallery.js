@@ -4,10 +4,6 @@ $(document).ready(function() {
 	$('#slides .slide').each(function(i){
 		positions[i]= totWidth;
 		totWidth += $(this).width();
-		if(!$(this).width()) {
-			alert("Please, fill in width & height for all your images!");
-			return false;
-		}
 	});
     var current=1;
     function autoAdvance() {
@@ -27,5 +23,6 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 	$('#menu ul li.menuItem:first').addClass('act').siblings().addClass('inact');
+  gameOfLife();
 });
 

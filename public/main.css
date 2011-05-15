@@ -1,16 +1,16 @@
 /******* global *******/
 * {
-    margin:0;
-    padding:0; 
+  margin:0;
+  padding:0; 
 }
 html, body { 
-    height: 100%;
+  height: 100%;
 }
 body {
-    font-family: arial, verdana, helvetica, sans-serif;
-    background-color: #FFF;
-    font-size: 20px;
-    margin: 0px;
+  font-family: arial, verdana, helvetica, sans-serif;
+  background-color: #FFF;
+  font-size: 20px;
+  margin: 0px;
 }
 a {
 	color: #999999;
@@ -31,112 +31,121 @@ h1 {
 
 /******* navigation *******/
 #navigation-wrapper {
-    padding-bottom: 20px;
-    height: 50px;
-    font-weight: lighter;
-    letter-spacing: -1px;
-    text-align: center;
+  padding-bottom: 20px;
+  height: 50px;
+  font-weight: lighter;
+  letter-spacing: -1px;
+  text-align: center;
 }
 #navigation {
-    margin: 0 auto;
-    width: 1000px;
-    text-align: left;
+  margin: 0 auto;
+  width: 1000px;
+  text-align: left;
 }
 #navigation ul {
-    list-style-type: none;
-    float: right;
-    margin-top: 40px;
-    margin-bottom: 0px;
-    padding-right: 20px;
+  list-style-type: none;
+  float: right;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  padding-right: 20px;
 }
 #navigation li {
-    display: inline;
-    font-size: 1.0em;
-    margin: 0px;
-    margin-left: 10px;
+  display: inline;
+  font-size: 1.0em;
+  margin: 0px;
+  margin-left: 10px;
 } 
 #navigation li a {
-    text-decoration: none;
-    color: #000;
-    text-shadow: 0px 0px 4px #666;
+  text-decoration: none;
+  color: #000;
+  text-shadow: 0px 0px 4px #666;
 } 
 #navigation li a:hover {
-    color: #808080;
-    text-shadow: 0px 0px 3px #999;
-    text-decoration: none;
+  color: #808080;
+  text-shadow: 0px 0px 3px #999;
+  text-decoration: none;
 } 
 #navigation li a:visited {
-    text-decoration: none;
+  text-decoration: none;
 } 
 #navigation li a:active {
-    text-decoration: none;
+  text-decoration: none;
 } 
 #navigation li.selected {
-    color: #888;
-    text-shadow: 0px 0px 3px #999;
+  color: #888;
+  text-shadow: 0px 0px 3px #999;
 } 
 #navigation .logo {
-    float: left;
-    padding: 0px;
-    padding-left: 20px;
-    padding-top: 15px;
-    margin: 0px;
+  float: left;
+  padding: 0px;
+  padding-left: 20px;
+  padding-top: 15px;
+  margin: 0px;
+}
+
+/******* game-of-life *******/
+#game-of-life {
+  position:fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
 }
 
 /******* content *******/
 #content {
-    min-height: 100%;
+  min-height: 100%;
 }
+
 /******* page *******/
 #page-wrapper {
-    overflow: auto;
-    padding-bottom: 75px;
+  overflow: auto;
+  padding-bottom: 75px;
 }
 #page {
-    width: 1000px;
-    margin: 0 auto;
-    text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
 }
 #page h1 {
-    margin: 0;
-    text-align: left;
-    margin-left: 20px;
-    margin-bottom: 10px;
+  margin: 0;
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 /******* post *******/
 #post-navigation {
 	margin-top: 2px;
-    margin-right: 20px;
-    width: 20.5%;
-    float: right;
-    text-align: left;
+  margin-right: 20px;
+  width: 20.5%;
+  float: right;
+  text-align: left;
 }
 #post-navigation a {
 	text-decoration: none;
 }
 #post-navigation p {
-    margin: 0;
-    margin-bottom: 10px;
-    margin-left: 13px;
-    color: #000;
-    text-shadow: 0px 0px 4px #666;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-left: 13px;
+  color: #000;
+  text-shadow: 0px 0px 4px #666;
 }
 #post-navigation p a {
-    color: #000;
+  color: #000;
 }
 #post-navigation p a:hover {
-    color: #777;
-    text-shadow: 0px 0px 3px #888;
+  color: #777;
+  text-shadow: 0px 0px 3px #888;
 }
 #post-navigation ul {
-    margin: 0;
-    padding:0;
-    margin-left: 10px;
-    list-style-type: none;
+  margin: 0;
+  padding:0;
+  margin-left: 10px;
+  list-style-type: none;
 }
 #post-navigation li {
-    margin: 0px;
+  margin: 0px;
 } 
 #post-navigation li.rss{
 } 
@@ -145,24 +154,24 @@ h1 {
 #post-navigation li.twitter{
 } 
 #post-navigation li a {
-    text-decoration: none;
+  text-decoration: none;
 } 
 .post-item {
-    background-color: #FFF;
-    -moz-border-radius: 15px;
+  background-color: #FFF;
+  -moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	border-bottom-radius: 15px;
 	border: 1px solid #AAA;
 	-moz-box-shadow: 0 0 15px #BBB;
 	-webkit-box-shadow: 0 0 15px #BBB;
 	box-shadow: 0 0 15px #BBB;
-    margin: 0 auto;
-    margin-bottom: 40px;
-    margin-left: 20px;
-    padding: 20px;
-    width: 65%;
-    float: left;
-    text-align: left;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  padding: 20px;
+  width: 65%;
+  float: left;
+  text-align: left;
 }
 .post-item .date {
 	float: left;
@@ -247,19 +256,19 @@ h1 {
 
 /******* auth *******/
 #auth {
-    margin: 0;
-    text-align: left;
-    margin-left: 20px;
-    margin-top: 30px;
+  margin: 0;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 30px;
 }
 
 /******* footer *******/
 #footer-wrapper {
-    position: relative;
-    margin-top: -75px;
-	height: 55px;
-    clear: both;
-    padding-top: 20px;
+  position: relative;
+  margin-top: -75px;
+  height: 55px;
+  clear: both;
+  padding-top: 20px;
 	color: #FFFFFF;
 }
 #footer {
@@ -267,22 +276,22 @@ h1 {
   width: 1000px;
 }
 #footer .logo {
-    margin: 0;
-    float: left;
-    margin-bottom: 20px;
-    margin-left: 20px;
+  margin: 0;
+  float: left;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 #footer ul {
-    margin: 0;
-    list-style-type: none;
-    float: right;
-    margin-bottom: 20px;
-    margin-right: 20px;
+  margin: 0;
+  list-style-type: none;
+  float: right;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 #footer li {
-    display: inline;
-    margin: 0px;
-    margin-left: 10px;
+  display: inline;
+  margin: 0px;
+  margin-left: 10px;
 } 
 #footer li.email{
 } 
@@ -384,21 +393,21 @@ pre span.symbol { color: #008B8B; }
     margin-bottom:-330px;
 }
 #gallery {
-    margin: 0 auto;
-    margin-top: 20px;
-	width: 800px;
-	overflow: hidden;
-    text-align: center;
-	-moz-box-shadow: 0 0 25px #666;
-	-webkit-box-shadow: 0 0 25px #666;
-	box-shadow: 0 0 25px #666;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
-	border-bottom-radius: 15px;
-    clear: both;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 800px;
+  overflow: hidden;
+  text-align: center;
+  -moz-box-shadow: 0 0 25px #666;
+  -webkit-box-shadow: 0 0 25px #666;
+  box-shadow: 0 0 25px #666;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-bottom-radius: 15px;
+  clear: both;
 }
 #slides {
-    text-align: left;
+  text-align: left;
 	height: 400px;
 	width: 800px;
 	overflow: hidden;
@@ -412,7 +421,7 @@ pre span.symbol { color: #008B8B; }
     position: relative;
 }
 #menu {
-    text-align: center;
+  text-align: center;
 }
 #menu ul{
 	margin: 0px;
@@ -442,9 +451,9 @@ li.menuItem a {
 
 /******* products *******/
 #products {
-    margin: 0 auto;
-    padding-top: 30px;
-    width: 800px;
+  margin: 0 auto;
+  padding-top: 30px;
+  width: 800px;
 }
 #products ul{
 	margin: 0px;
@@ -453,55 +462,56 @@ li.menuItem a {
 #products li.product {
 }
 #products li.product .icon {
-    margin-left: 10px;
-    float:left;
+  margin-left: 10px;
+  float:left;
 }
 #products li.product .app-store {
-    float:right;
-    margin-right: 20px;
+  float:right;
+  margin-right: 20px;
 }
 #products li.product .content {
-    float:left;
-    margin-left: 20px;
-    width: 65%;
-    clear right;
-    text-align: left;
+  float:left;
+  margin-left: 20px;
+  width: 65%;
+  clear right;
+  text-align: left;
 }
 #products li.product .content h1 {
 	color: #696;
-    font-size: 120%;
-    font-weight: normal;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 0px;
+  font-size: 120%;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 0px;
 }
 #products li.product .content p {
-    margin: 0px;
-    font-size: 85%;
+  margin: 0px;
+  font-size: 85%;
 }
 #products li.product .content .more {
-    margin: 0px;
-    margin-top: 10px;
+  margin: 0px;
+  margin-top: 10px;
 }
 #products li.product .content .more a {
-    text-decoration: none;
+  text-decoration: none;
 	color: #AAA;
-    font-size: 85%;
+  font-size: 85%;
 }
 #products li.product{
-    margin-bottom: 40px;
-    background-color: #FFF;
+  margin-bottom: 40px;
+  background-color: #FFF;
 	list-style:none;
-    -moz-border-radius:15px;
+  -moz-border-radius:15px;
 	-webkit-border-radius:15px;
 	border-bottom-radius:15px;
 	-moz-box-shadow: 0 0 15px #BBB;
 	-webkit-box-shadow: 0 0 15px #BBB;
 	box-shadow: 0 0 15px #BBB;
-    border-style:solid;
-    border-width:1px;
-    border-color:#DDD;
-    clear:; right;
+  border-style:solid;
+  border-width:1px;
+  border-color:#DDD;
+  clear: right;
 }
 
 /******* product *******/
+

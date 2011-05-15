@@ -14,10 +14,13 @@
   
   <script type="text/javascript">
     $(document).ready(function() {
-      setPageSize();
+      setPageWidth();
     });
+    window.onresize = function() {
+      setPageWidth();
+    }
   </script>
-  
+    
   <div id="content">
     <div id="navigation-wrapper">
     	<div id="navigation">
