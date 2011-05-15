@@ -398,9 +398,9 @@ pre span.symbol { color: #008B8B; }
   width: 800px;
   overflow: hidden;
   text-align: center;
-  -moz-box-shadow: 0 0 25px #666;
-  -webkit-box-shadow: 0 0 25px #666;
-  box-shadow: 0 0 25px #666;
+  -moz-box-shadow: 0 0 15px #666;
+  -webkit-box-shadow: 0 0 15px #666;
+  box-shadow: 0 0 15px #666;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-bottom-radius: 15px;
