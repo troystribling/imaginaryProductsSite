@@ -119,9 +119,6 @@ Life = {
         context.clearRect(xpos, ypos , this.CELL_SIZE, this.CELL_SIZE)
         if (this.grid[h][w] === this.ALIVE) {
           context.drawImage(this.cell_image, xpos, ypos);
-        } else {
-          context.fillStyle = "#EEE";
-          context.fillRect(xpos, ypos, this.CELL_SIZE, this.CELL_SIZE);
         }
       }
     }

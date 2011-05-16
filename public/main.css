@@ -497,7 +497,7 @@ li.menuItem a {
 	color: #AAA;
   font-size: 85%;
 }
-#products li.product{
+#products li.product {
   margin-bottom: 40px;
   background-color: #FFF;
 	list-style:none;
@@ -513,5 +513,12 @@ li.menuItem a {
   clear: right;
 }
 
-/******* product *******/
+/******* product web-gnosus *******/
+#web-gnosus-background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
