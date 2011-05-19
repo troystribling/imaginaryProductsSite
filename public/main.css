@@ -563,28 +563,28 @@ li.menuItem a {
   width: 100%; 
 }
 #zgomot-vignette-top, #zgomot-vignette-bottom {
-  height: 20%; 
+  height: 25%; 
 }
 #zgomot-vignette-left, #zgomot-vignette-right{
-  width: 20%; 
+  width: 25%; 
 }
 #zgomot-vignette-top {
-  background-image: -moz-linear-gradient(100% 100% 90deg, rgba(221, 221, 221, 0), #bbb );
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bbb), to(rgba(221, 221, 221, 0)));
+  background-image: -moz-linear-gradient(100% 100% 90deg, rgba(221, 221, 221, 0), #aaa );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#aaa), to(rgba(221, 221, 221, 0)));
   top: 0; 
 }
 #zgomot-vignette-bottom{
-  background-image: -moz-linear-gradient(100% 100% 90deg, #bbb, rgba(221, 221, 221, 0) );
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(221, 221, 221, 0)), to(#bbb));
+  background-image: -moz-linear-gradient(100% 100% 90deg, #aaa, rgba(221, 221, 221, 0) );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(221, 221, 221, 0)), to(#aaa));
   bottom: 0; 
 }
 #zgomot-vignette-left{
-  background-image: -moz-linear-gradient(100% 100% 180deg, rgba(221, 221, 221, 0), #bbb );
-  background-image: -webkit-gradient(linear, left center, right center, from(#bbb), to(rgba(221, 221, 221, 0)));
+  background-image: -moz-linear-gradient(100% 100% 180deg, rgba(221, 221, 221, 0), #aaa );
+  background-image: -webkit-gradient(linear, left center, right center, from(#aaa), to(rgba(221, 221, 221, 0)));
   left: 0;
 }
 #zgomot-vignette-right{
-  background-image: -moz-linear-gradient(100% 100% 180deg, #bbb, rgba(221, 221, 221, 0) );
-  background-image: -webkit-gradient(linear, right center, left center, from(#bbb), to(rgba(221, 221, 221, 0)));
+  background-image: -moz-linear-gradient(100% 100% 180deg, #aaa, rgba(221, 221, 221, 0) );
+  background-image: -webkit-gradient(linear, right center, left center, from(#aaa), to(rgba(221, 221, 221, 0)));
   right: 0;
 }
