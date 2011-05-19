@@ -434,7 +434,6 @@ li.menuItem{
 	zoom:1; 
 	*display: inline;
 	list-style:none;
-	overflow:hidden;
 }
 li.menuItem.inact:hover{
 }
@@ -447,6 +446,40 @@ li.menuItem a {
 	display:block;
 	height: 35px;
 	padding-top: 10px;
+}
+
+/*******  vignette *******/
+#vignette-top, #vignette-bottom, #vignette-left, #vignette-right {
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  width: 100%; 
+}
+#vignette-top, #vignette-bottom {
+  height: 20%; 
+}
+#vignette-left, #vignette-right{
+  width: 20%; 
+}
+#vignette-top {
+  background-image: -moz-linear-gradient(100% 100% 90deg, rgba(238, 238, 238, 0), #ccc );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(rgba(238, 238, 238, 0)));
+  top: 0; 
+}
+#vignette-bottom{
+  background-image: -moz-linear-gradient(100% 100% 90deg, #ccc, rgba(238, 238, 238, 0) );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238, 238, 238, 0)), to(#ccc));
+  bottom: 0; 
+}
+#vignette-left{
+  background-image: -moz-linear-gradient(100% 100% 180deg, rgba(238, 238, 238, 0), #ccc );
+  background-image: -webkit-gradient(linear, left center, right center, from(#ccc), to(rgba(238, 238, 238, 0)));
+  left: 0;
+}
+#vignette-right{
+  background-image: -moz-linear-gradient(100% 100% 180deg, #ccc, rgba(238, 238, 238, 0) );
+  background-image: -webkit-gradient(linear, right center, left center, from(#ccc), to(rgba(238, 238, 238, 0)));
+  right: 0;
 }
 
 /******* products *******/
@@ -513,7 +546,7 @@ li.menuItem a {
   clear: right;
 }
 
-/******* product web-gnosus *******/
+/******* product webgnosus *******/
 #web-gnosus-background {
   width: 100%;
   height: 100%;
@@ -522,3 +555,36 @@ li.menuItem a {
   left: 0;
 }
 
+/******* product zgomot *******/
+#zgomot-vignette-top, #zgomot-vignette-bottom, #zgomot-vignette-left, #zgomot-vignette-right {
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  width: 100%; 
+}
+#zgomot-vignette-top, #zgomot-vignette-bottom {
+  height: 20%; 
+}
+#zgomot-vignette-left, #zgomot-vignette-right{
+  width: 20%; 
+}
+#zgomot-vignette-top {
+  background-image: -moz-linear-gradient(100% 100% 90deg, rgba(221, 221, 221, 0), #bbb );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bbb), to(rgba(221, 221, 221, 0)));
+  top: 0; 
+}
+#zgomot-vignette-bottom{
+  background-image: -moz-linear-gradient(100% 100% 90deg, #bbb, rgba(221, 221, 221, 0) );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(221, 221, 221, 0)), to(#bbb));
+  bottom: 0; 
+}
+#zgomot-vignette-left{
+  background-image: -moz-linear-gradient(100% 100% 180deg, rgba(221, 221, 221, 0), #bbb );
+  background-image: -webkit-gradient(linear, left center, right center, from(#bbb), to(rgba(221, 221, 221, 0)));
+  left: 0;
+}
+#zgomot-vignette-right{
+  background-image: -moz-linear-gradient(100% 100% 180deg, #bbb, rgba(221, 221, 221, 0) );
+  background-image: -webkit-gradient(linear, right center, left center, from(#bbb), to(rgba(221, 221, 221, 0)));
+  right: 0;
+}
