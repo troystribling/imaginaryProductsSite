@@ -588,3 +588,44 @@ li.menuItem a {
   background-image: -webkit-gradient(linear, right center, left center, from(#aaa), to(rgba(221, 221, 221, 0)));
   right: 0;
 }
+
+/******* product agent-xmpp *******/
+#agent-xmpp-vignette-top, #agent-xmpp-vignette-bottom, #agent-xmpp-vignette-left, #agent-xmpp-vignette-right {
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  width: 100%; 
+}
+/******* navigation *******/
+#agent-xmpp-navigation-wrapper {
+  padding-bottom: 20px;
+  height: 80px;
+  font-weight: lighter;
+  text-align: center;
+}
+#agent-xmpp-vignette-top, #agent-xmpp-vignette-bottom {
+  height: 30%; 
+}
+#agent-xmpp-vignette-left, #agent-xmpp-vignette-right{
+  width: 30%; 
+}
+#agent-xmpp-vignette-top {
+  background-image: -moz-linear-gradient(100% 100% 90deg, rgba(239, 238, 234, 0), #efeeea );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efeeea), to(rgba(239, 238, 234, 0)));
+  top: 0; 
+}
+#agent-xmpp-vignette-bottom{
+  background-image: -moz-linear-gradient(100% 100% 90deg, #efeeea, rgba(239, 238, 234, 0) );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(239, 238, 234, 0)), to(#efeeea));
+  bottom: 0; 
+}
+#agent-xmpp-vignette-left{
+  background-image: -moz-linear-gradient(100% 100% 180deg, rgba(239, 238, 234, 0), #efeeea );
+  background-image: -webkit-gradient(linear, left center, right center, from(#efeeea), to(rgba(239, 238, 234, 0)));
+  left: 0;
+}
+#agent-xmpp-vignette-right{
+  background-image: -moz-linear-gradient(100% 100% 180deg, #efeeea, rgba(239, 238, 234, 0) );
+  background-image: -webkit-gradient(linear, right center, left center, from(#efeeea), to(rgba(239, 238, 234, 0)));
+  right: 0;
+}
