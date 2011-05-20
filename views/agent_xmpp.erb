@@ -1,9 +1,50 @@
-<% content_for :navigation do %>
-  <ul>
-    <li><a href="/products">products</a></li>
-    <li><a href="/projects">projects</a></li>
-    <li><a href="/blog">blog</a></li>
-  </ul>
-<% end %>
-<% content_for :page do %>
-<% end %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>AgentXMPP</title>
+	<link href="/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color: #DDD;">
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+      setPageWidth();
+    });
+  </script>
+  
+  <div id="content">
+    <div id="navigation-wrapper">
+    	<div id="navigation">
+       	<img src="/agent-xmpp/agent-xmpp-name.png" class="logo">
+    	</div>
+    </div>
+
+    <div id="page-wrapper">
+      <div id="page">
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-wrapper">
+    <div id="footer">
+      <div>
+     	  <a href="/"><img src="/agent-xmpp/agent-xmpp-imaginaryProducts.png" class="logo"></a>
+     	</div>
+      <ul>
+        <li>
+          <img src="/agent-xmpp/agent-xmpp-email.png" alt="email imaginaryProducts"/>
+        </li>
+        <li>
+          <a href="http://www.twitter.com/imaginaryprod">
+            <img src="/agent-xmpp/agent-xmpp-twitter.png" alt="Follow imaginaryprod on Twitter"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+</body>
+</html>
