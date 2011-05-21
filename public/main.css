@@ -590,18 +590,16 @@ li.menuItem a {
 }
 
 /******* product agent-xmpp *******/
+#agent {
+  position: absolute;
+  right: 0;
+  bottom: 75;
+}
 #agent-xmpp-vignette-top, #agent-xmpp-vignette-bottom, #agent-xmpp-vignette-left, #agent-xmpp-vignette-right {
   height: 100%;
   position: absolute;
   z-index: -1;
   width: 100%; 
-}
-/******* navigation *******/
-#agent-xmpp-navigation-wrapper {
-  padding-bottom: 20px;
-  height: 80px;
-  font-weight: lighter;
-  text-align: center;
 }
 #agent-xmpp-vignette-top, #agent-xmpp-vignette-bottom {
   height: 30%; 

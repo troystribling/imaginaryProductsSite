@@ -9,4 +9,12 @@ function setPageWidth() {
   $('#page').width(page_width);
   $('#navigation').width(page_width);
   $('#footer').width(page_width);
+  var agent = $('#agent');
+  if (agent) {
+    var right = (win_width - 1000) / 2;
+    if (win_width < 1000) {
+      right = 0;
+    }
+    agent.css('right', right);
+  }
 }

@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<title>AgentXMPP</title>
 	<link href="/main.css" rel="stylesheet" type="text/css" />
+  <script src='/javascript/jquery-1.5.2.min.js' type='text/javascript' charset='utf-8'></script>
+  <script src='/javascript/imaginaryProducts.js' type='text/javascript' charset='utf-8'></script>
 </head>
 
 <body "background-image: url('/agent-xmpp/agent-xmpp-background.png');">
@@ -13,6 +15,9 @@
     $(document).ready(function() {
       setPageWidth();
     });
+    window.onresize = function() {
+      setPageWidth();
+    }
   </script>
  
   <div id="agent-xmpp-vignette-top"></div>
@@ -21,19 +26,20 @@
   <div id="agent-xmpp-vignette-left"></div>
   
   <div id="content">
-    <div id="agent-xmpp-navigation-wrapper">
+    <div id="navigation-wrapper" style="height: 80px;">
     	<div id="navigation">
        	<img src="/agent-xmpp/agent-xmpp-name.png" class="logo">
     	</div>
     </div>
-
-    <div id="page-wrapper">
+    
+    <div id="page-wrapper" style="padding-bottom: 78px;">
+     	<img id="agent" src="/agent-xmpp/agent-xmpp-background-agent.png">
       <div id="page">
       </div>
     </div>
   </div>
 
-  <div id="footer-wrapper">
+  <div id="footer-wrapper" style="background-color: b50012; border-top: 3px solid #000; margin-top: -78px;">
     <div id="footer">
       <div>
      	  <a href="/"><img src="/agent-xmpp/agent-xmpp-imaginaryProducts.png" class="logo"></a>
