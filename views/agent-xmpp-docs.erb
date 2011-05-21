@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: README.rdoc [RDoc Documentation]</title>
+
+	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1>Agent XMPP</h1>
+<p>
+Agent XMPP is a simple DSL for writing automated XMPP clients that support
+Messaging, Ad-Hoc Commands and Publish Subscribe  Events. An application
+that responds to an Ad-Hoc Command can be written with few lines of code.
+</p>
+<pre>
+    # myapp.rb
+    require 'rubygems'
+    require 'agent_xmpp'
+
+    command 'hello' do
+      'Hello World' 
+    end
+</pre>
+<p>
+Specify the application Jabber ID (JID), password and contact roster in
+<tt>agent_xmpp.yml</tt>.
+</p>
+<pre>
+    jid: myapp@nowhere.com
+    password: none
+    roster:
+        *              jid:you@home.com
+            groups: [admin]
+</pre>
+<p>
+Be sure libxml2 headers are available and that libsqlite3-ruby1.9.1 is
+installed,
+</p>
+<pre>
+    sudo apt-get install libxml2-dev
+    sudo apt-get install libsqlite3-ruby1.9.1
+</pre>
+<p>
+Install the gem,
+</p>
+<pre>
+    sudo gem install agent_xmpp
+</pre>
+<p>
+Install the Gajim XMPP Client version 0.12.3 or higher, <a
+href="http://www.gajim.org">www.gajim.org</a>, and connect to
+<em>you@home.com</em>. 
+</p>
+<p>
+Run the application,
+</p>
+<pre>
+    ruby myapp.rb
+</pre>
+<p>
+When started for the first time <tt>myapp.rb</tt> will automatically send
+contact requests to all contacts specified in the <tt>agent_xmpp.yml</tt>
+contact roster. If you accept the contact request <em>myapp</em> will
+appear in the Gajim contact roster.  Right click on <em>myapp</em> and
+select <em>execute</em> <em>commands</em> from the drop down menu. A list
+of Ad-Hoc Commands will be displayed containing <em>hello</em>. Select it
+and click the <em>forward</em> <em>button</em> to execute.
+</p>
+<p>
+See <tt><a
+href="http://github.com/troystribling/agent_xmpp/blob/master/test/app/app.rb">github.com/troystribling/agent_xmpp/blob/master/test/app/app.rb</a></tt>
+for many examples.
+</p>
+<h2>Supported Environment</h2>
+<p>
+The following versions of ruby are supported
+</p>
+<pre>
+    ruby 1.9.1
+    
+</pre>
+<p>
+The following Operating Systems are supported
+</p>
+<pre>
+    
+    Ubuntu 10.4
+    
+</pre>
+<h2>Contact Groups</h2>
+<p>
+Contact groups may be specified in <tt>agent_xmpp.yml</tt>.
+</p>
+<pre>
+    jid: myapp@nowhere.com
+    password: none
+    roster:
+        *              jid:you@home.com
+            groups: [good group, owners]
+
+        *              jid: someone@somewhere.com
+            groups: [bad group]
+    
+</pre>
+<h2>Agent Administrator Commands</h2>
+<p>
+Any contact that is in the <tt>admin</tt> contact group can execute
+<em>Administrator Commands</em>. At least one administrator should be
+specified in <tt>agent_xmpp.yml</tt>. The following commands are available
+to agent administrators.
+</p>
+<ul>
+<li><p>
+<b>contacts</b>: List the contact roster.
+</p>
+</li>
+<li><p>
+<b>online users</b>: List all online users.
+</p>
+</li>
+<li><p>
+<b>add contact</b>: Add a contact.
+</p>
+</li>
+<li><p>
+<b>delete contact</b>: Delete a contact.
+</p>
+</li>
+<li><p>
+<b>subscriptions</b>: List all subscriptions with statistics.
+</p>
+</li>
+<li><p>
+<b>publications</b>: List all publications with statistics.
+</p>
+</li>
+<li><p>
+<b>messages by type</b>: List message statistics by message type.
+</p>
+</li>
+<li><p>
+<b>messages by contact</b>: List message statistics by contact.
+</p>
+</li>
+<li><p>
+<b>messages by command</b>: List message statistics by command.
+</p>
+<pre>
+  
+</pre>
+</li>
+</ul>
+<h2>Ad-Hoc Command Response Payload</h2>
+<p>
+<em>Ad-Hoc Commands</em> allow XMPP clients to send and receive structured
+parameterized commands. To process an <em>Ad-Hoc Command</em> request in an
+Agent XMPP application use <tt>command</tt> blocks. Agent XMPP will map
+native ruby scalars, arrays and hashes returned by <tt>command</tt> blocks
+to jabber:x:data command response payloads (see XEP-0004 <a
+href="http://xmpp.org/extensions/xep-0004.html">xmpp.org/extensions/xep-0004.html</a>
+for a description of jabber:x:data).
+</p>
+<pre>
+    command 'scalar' do
+      'scalar' 
+    end
+
+    command 'hash' do
+      {:a1 =&gt; 'v1', :a2 =&gt; 'v2'}
+    end
+
+    command 'scalar_array' do
+      ['v1', 'v2','v3', 'v4'] 
+    end
+
+    command 'hash_array' do
+      {:a1 =&gt; ['v11', 'v11'], :a2 =&gt; 'v12'}
+    end
+
+    command 'array_hash' do
+      [{:a1 =&gt; 'v11', :a2 =&gt; 'v12'}, 
+       {:a1 =&gt; 'v21', :a2 =&gt; 'v22'}, 
+       {:a1 =&gt; 'v31', :a2 =&gt; 'v32'}]
+    end
+
+    command 'array_hash_array' do
+      [{:a1 =&gt; ['v11', 'v11'], :a2 =&gt; 'v12'}, 
+       {:a1 =&gt; ['v21', 'v21'], :a2 =&gt; 'v22'}, 
+       {:a1 =&gt; ['v31', 'v31'], :a2 =&gt; 'v32'}]
+    end
+</pre>
+<h2>Ad-Hoc Command Data Forms</h2>
+<p>
+XMPP provides a simple form specification for entry of <em>Ad-Hoc
+Command</em> parameters, <a
+href="http://xmpp.org/extensions/xep-0004.html#protocol-fieldtypes">xmpp.org/extensions/xep-0004.html#protocol-fieldtypes</a>.
+Agent XMPP supports the following form controls.
+</p>
+<ul>
+<li><p>
+<b>title</b>: The form title.
+</p>
+<pre>
+  
+</pre>
+</li>
+<li><p>
+<b>instructions</b>: Form usage instructions for the user.
+</p>
+<pre>
+  
+</pre>
+</li>
+<li><p>
+<b>fixed</b>: Static text.
+</p>
+<pre>
+  
+</pre>
+</li>
+<li><p>
+<b>text-single</b>: Single line text entry.
+</p>
+<pre>
+  
+</pre>
+</li>
+<li><p>
+<b>text-private</b>: Single line private text entry for passwords.
+</p>
+<pre>
+  
+</pre>
+</li>
+<li><p>
+<b>jid-single</b>: Single JID entry with syntax validation.
+</p>
+<pre>
+  
+</pre>
+</li>
+<li><p>
+<b>text-multi</b>: Muli-line text entry.
+</p>
+<pre>
+  
+</pre>
+</li>
+<li><p>
+<b>list-single</b>: Select a single item from a list items.
+</p>
+<pre>
+  
+</pre>
+</li>
+<li><p>
+<b>boolean</b>: Select a boolean value for an item.
+</p>
+<pre>
+  
+</pre>
+</li>
+</ul>
+<p>
+Form controls are specified in an <tt>on</tt> bloc which takes the command
+<tt>action</tt> as an argument and <tt>yields</tt> the <tt>form</tt>. Valid
+values for the action are <tt>:execute</tt> and <tt>:submit</tt>. In a
+simple form the controls are specified in <tt>on(:execute)</tt>  and the
+response in <tt>on(:submit)</tt>.
+</p>
+<pre>
+    command 'long_form' do
+      on(:execute) do |form|
+        form.add_title('The Long Form')
+        form.add_instructions('Make the correct choices and provide the required information.')
+        form.add_fixed(&quot;Your name is required.&quot;)
+        form.add_text_single('first_name', 'First Name')
+        form.add_text_single('last_name', 'Last Name')
+        form.add_fixed(&quot;Your address is required.&quot;)
+        form.add_text_single('street', 'Street')
+        form.add_text_single('city', 'City')
+        form.add_text_single('state', 'State')
+        form.add_text_single('zip', 'Zip Code')
+        form.add_fixed(&quot;Enter two friends.&quot;)
+        form.add_jid_single('contact_1', 'contact JID')
+        form.add_jid_single('contact_2', 'contact JID')
+        form.add_fixed(&quot;Your password is required.&quot;)
+        form.add_text_private('password', 'Password')
+        form.add_text_private('renter_password', 'Renter Password')
+        form.add_fixed(&quot;Choose your food.&quot;)
+        form.add_list_single('fruits', [:apple, :orange, :lemon, :lime, :kiwi_fruit], 'Select a Fruit')
+        form.add_list_single('nuts', [:peanut, :almond, :cashew, :pecan, :walnut], 'Select a Nut')
+        form.add_list_single('vegetables', [:broccoli, :carrot, :corn, :tomato, :onion], 'Select a Vegtable')
+        form.add_fixed(&quot;Answer the questions.&quot;)
+        form.add_boolean('yes_or_no', 'Yes or No please?')
+        form.add_boolean('flux_capcitors', 'Enable flux capacitors for superluminal transport')
+        form.add_fixed(&quot;A story of at least 250 characters is required&quot;)
+        form.add_text_multi('story', 'Your Story')
+      end
+      on(:submit) do
+        params[:data]
+      end
+    end
+    
+</pre>
+<p>
+If command parameters have dependencies multi-step forms can be used.
+Multi-step forms are specified by a sequence of <tt>on(:submit)</tt> blocks
+that are called in the order listed.
+</p>
+<pre>
+    command 'multiple_steps' do
+      on(:execute) do |form|
+        form.add_title('Account Features')
+        form.add_instructions('Enter and Account')
+        form.add_jid_single('jid', 'account JID')
+      end
+      on(:submit) do |form|
+        form.add_title(&quot;Account '#{params[:data]['jid']}'&quot;)
+        form.add_instructions('Enable/Disbale features')
+        form.add_boolean('idle_logout', 'On or Off please')
+        form.add_boolean('electrocution', 'Electrocute on login failure?')
+        form.add_text_multi('mod', 'Message of the day')
+        form.add_text_multi('warn', 'Warning message')
+      end
+      on(:submit) do
+        params_list.inject({}){|r,p| r.merge(p[:data])} 
+      end
+    end
+</pre>
+<h2>Command Authorization</h2>
+<p>
+Agent XMPP allows command authorization groups to be specified by XMPP
+contact groups.
+</p>
+<pre>
+    command 'do_something', :access =&gt; 'good' do
+        Something.do_it(params[:data])
+    end
+
+    command 'do_something', :access =&gt; ['bad', 'good'] do
+        SomethingElse.do_it(params[:data])
+    end
+</pre>
+<h2>Command Before Filters</h2>
+<p>
+Agent XMPP supports specification of filters executed before command
+execution that must return a boolean value. If the filter returns
+<tt>true</tt> the command executes. If <tt>false</tt> is returned the
+command does not execute. 
+</p>
+<pre>
+    before :command =&gt; :all do
+      jid = params[:from]
+      AgentXmpp::Roster.find_by_jid(jid) or AgentXmpp.is_account_jid?(jid)
+    end
+
+    before :command =&gt; 'do_something' do
+        Something.do_it?(params)
+    end
+
+    before :command =&gt; ['do_something', 'and_something_else'] do
+        Something.do_it?(params)
+    end
+</pre>
+<h2>Deferred Command Execution</h2>
+<p>
+By default Agent XMPP executes commands in the main event loop. If a
+command requires a lot of time for execution it can be deferred to a thread
+pool.
+</p>
+<pre>
+    command 'starship_engine_configuration', :defer =&gt; true do
+      on(:execute) do |form|
+        form.add_title('Hyper Drive Configuration')
+        form.add_instructions('Choose the hyperdrive configuration which best suits your needs')
+        form.add_boolean('answer', 'On or Off please')
+        form.add_boolean('flux_capcitors', 'Enable flux capacitors for superluminal transport')
+        form.add_fixed('Enable SQUIDs for enhanced quantum decoherence')
+        form.add_boolean('squids')
+      end
+      on(:submit) do
+        StarshipEngineering.engage(params[:data])
+      end
+    end
+</pre>
+<h2>Send Commands</h2>
+<p>
+Commands may be sent with or without a response callback,
+</p>
+<pre>
+    send_command(:to=&gt;'thatapp@aplace.com/ahost', :node=&gt; 'hello') do |status, data|
+      puts &quot;COMMAND RESPONSE: #{status}, #{data.inspect}&quot;
+    end
+
+    send_command(:to=&gt;'thatapp@a-place.com/ahost', :node=&gt; 'bye')
+</pre>
+<p>
+and within <tt>command</tt> blocks.
+</p>
+<pre>
+    command 'hash_hello' do
+      send_command(:to=&gt;params[:from], :node=&gt; 'hello') do |status, data|
+        puts &quot;COMMAND RESPONSE: #{status}, #{data.inspect}&quot;
+      end
+      {:a1 =&gt; 'v1', :a2 =&gt; 'v2'}
+    end
+</pre>
+<h2>Command Error Response</h2>
+<p>
+Error responses to <em>Ad-Hoc Command</em> requests can be sent if an error
+is encountered during command execution.
+</p>
+<pre>
+    
+    command 'do_something' do
+      if MyValidator.can_do_something?(params)
+        'I did it'
+      else
+        error(:bad_request, params, 'jid not specified')
+      end
+    end
+    
+</pre>
+<p>
+In general the error response syntax has the form,
+</p>
+<pre>
+    error(error_type, params, error_message)
+</pre>
+<p>
+Valid <tt>error_types</tt> are,
+</p>
+<pre>
+    :bad-request
+    :conflict
+    :feature-not-implemented
+    :forbidden
+    :gone
+    :internal-server-error
+    :item-not-found
+    :jid-malformed
+    :not-acceptable
+    :not-allowed
+    :not-authorized
+    :payment-required
+    :recipient-unavailable
+    :redirect
+    :registration-required
+    :remote-server-not-found
+    :remote-server-timeout
+    :resource-constraint
+    :service-unavailable
+    :subscription-required
+    :undefined-condition
+    :unexpected-request
+</pre>
+<h2>Command Response Delegation</h2>
+<p>
+Command responses may be delegated to one or more <em>Message Processing
+Callbacks</em> (see the last section <em>Message Processing Callbacks</em>
+for a list). <em>Message Processing Callbacks</em> give applications the
+ability to interface with the framework message processing workflow.
+<em>Command Response Delegation</em> is useful when a command must send
+another message and the response of this secondary message is processed by
+the framework. The command then delegates its response to the secondary
+message response. In the example below of the <tt>add_contact</tt>
+administration message the command sends a command to the server to add a
+roster item and does not respond to the original request until the response
+of the add roster item request is received from the server. 
+</p>
+<pre>
+    command 'admin/add_contact', :access =&gt; 'admin' do
+      on(:execute) do |form|
+        form.add_title('Add Contact')
+        form.add_jid_single('jid', 'contact JID')
+        form.add_text_single('groups', 'groups comma seperated')
+      end
+      on(:submit) do
+        contact = params[:data]
+        if contact[&quot;jid&quot;]
+          AgentXmpp::Contact.update(contact)
+          xmpp_msg(AgentXmpp::Xmpp::IqRoster.update(pipe, contact[&quot;jid&quot;], contact[&quot;groups&quot;].split(/,/))) 
+          xmpp_msg(AgentXmpp::Xmpp::Presence.subscribe(contact[&quot;jid&quot;]))
+          delegate_to(
+            :on_update_roster_item_result =&gt; lambda do |pipe, item_jid|     
+              command_completed if item_jid.eql?(contact[&quot;jid&quot;])
+            end,
+            :on_update_roster_item_error  =&gt; lambda do |pipe, item_jid|
+              error(:bad_request, params, 'roster updated failed') if item_jid.eql?(contact[&quot;jid&quot;])
+            end
+          )
+        else
+          error(:bad_request, params, 'jid not specified')
+        end
+      end
+    end
+</pre>
+<h2>Publish</h2>
+<p>
+Publish nodes are configured in <tt>agent_xmpp.yml</tt>.
+</p>
+<pre>
+    jid: myapp@nowhere.com
+    password: none
+    roster:
+        *              jid:you@home.com
+    publish:
+        *              node: time
+            title: &quot;Curent Time&quot;   
+        *              node: alarm
+            title: &quot;Alarms&quot;   
+</pre>
+<p>
+The nodes are created if they do not exist and publish methods are
+generated for each node.
+</p>
+<pre>
+    publish_time('The time is:' + Time.now.to_s)
+    
+    publish_alarm({:severity =&gt; :major, :description =&gt; &quot;A really bad failure&quot;})
+</pre>
+<p>
+Publish nodes discovered that are not in <tt>agent_xmpp.yml</tt> will be
+deleted.
+</p>
+<h2>Publish Options</h2>
+<p>
+The following publish options are available with the indicated default
+values. The options may be changed in <tt>agent_xmpp.yml</tt>.
+</p>
+<pre>
+    :title                    =&gt; 'event',
+    :access_model             =&gt; 'presence',
+    :max_items                =&gt; 20,
+    :deliver_notifications    =&gt; 1,
+    :deliver_payloads         =&gt; 1,
+    :persist_items            =&gt; 1,
+    :subscribe                =&gt; 1,
+    :notify_config            =&gt; 0,
+    :notify_delete            =&gt; 0,
+    :notify_retract           =&gt; 0,
+</pre>
+<p>
+See <a
+href="http://xmpp.org/extensions/xep-0060.html#registrar-formtypes-config">xmpp.org/extensions/xep-0060.html#registrar-formtypes-config</a>
+for a detailed description.
+</p>
+<h2>Subscribe</h2>
+<p>
+Declare <tt>event</tt> blocks in <tt>myapp.rb</tt> to subscribe to
+published events.
+</p>
+<pre>
+    # myapp.rb
+    require 'rubygems'
+    require 'agent_xmpp'
+
+    event 'someone@somewhere.com', 'time' do
+      message(:to=&gt;'someone@somewhere.com', :body=&gt;&quot;Got the event at: &quot; + Time.now.to_s)
+    end
+</pre>
+<p>
+Agent XMPP will verify subscription to the event and subscribe if required.
+Subscriptions discovered that are not declared by an event block will be
+deleted.
+</p>
+<h2>Receive Chat Messages</h2>
+<p>
+Declare <tt>chat</tt> blocks in <tt>myapp.rb</tt> to receive and respond to
+chat messages.
+</p>
+<pre>
+  
+    # myapp.rb
+    require 'rubygems'
+    require 'agent_xmpp'
+
+    chat do
+      params[:body].reverse
+    end
+</pre>
+<p>
+If the <tt>chat</tt> block returns a <tt>String</tt> a response will be
+sent to the message sender.
+</p>
+<h2>Send Chat Messages</h2>
+<pre>
+    send_chat(:to=&gt;'thatapp@a-place.com/onahost', :body=&gt;&quot;Hello from #{AgentXmpp.jid.to_s} at &quot; + Time.now.to_s)
+    
+</pre>
+<h2>Routing Priority</h2>
+<p>
+The routing priority may be configured in <tt>agent_xmpp.yml</tt>. The
+default value is 1. Valid values are between -127 and 128.  See <a
+href="http://xmpp.org/rfcs/rfc3921.html">xmpp.org/rfcs/rfc3921.html</a> for
+a details.
+</p>
+<pre>
+    jid: myapp@nowhere.com
+    password: none
+    priority: 128
+    roster:
+        *              jid:you@home.com
+            groups: [good group, owners]
+        
+</pre>
+<h2>Message Processing Context Extension</h2>
+<p>
+You can add methods to the <tt>command</tt> and <tt>chat</tt> context by
+adding your methods to a module and calling,
+</p>
+<pre>
+    
+    include_module MyExtensions
+            
+</pre>
+<h2>Major Event Callbacks</h2>
+<p>
+Agent XMPP provides callbacks for applications to respond to major events
+that occur during execution.
+</p>
+<pre>
+ 
+    # application starting
+    before_start{}
+
+    # connected to server
+    after_connected{|connection|}
+
+    # client restarts when disconnected form server
+    restarting_client{|connection|}
+    
+    # a pubsub node was discovered at service
+    discovered_pubsub_node{|service, node|}
+    
+    # command nodes were discovered at jid
+    discovered_command_nodes{|jid, nodes|}
+
+    # a presence message of status :available or :unavailable was received from jid
+    received_presence{|from, status|}
+    
+</pre>
+<h2>Authentication</h2>
+<pre>
+    
+</pre>
+<ul>
+<li><p>
+Basic SASL
+</p>
+</li>
+</ul>
+<h2>Development with XMPP Clients</h2>
+<p>
+Ad-Hoc Commands, jabber:x:data Forms nor Service Discovery are widely
+supported by XMPP clients and I have not found a client that adequately
+supports Publish-Subscribe. Gajim <a
+href="http://www.gajim.org">www.gajim.org</a> provides support for Ad-Hoc
+Commands and jabber:x:data Forms. Service Discovery, which is useful for
+Publish-Subscibe development, is supported by Gajim, but Psi <a
+href="http://psi-im.org">psi-im.org</a> provides a much better
+implementation. Both Gajim and Psi provide an interface for manual entry of
+XML messages. Since Publish-Subscribe is not supported on the user
+interface manual entry of messages is required for development. Example
+messages can be found at <a
+href="http://gist.github.com/160344">gist.github.com/160344</a>
+</p>
+<h2>Logging</h2>
+<p>
+By default log messages are written to STDOUT. A log file can be specified
+with the -l option.
+</p>
+<pre>
+        ruby mybot.rb -l file.log
+</pre>
+<p>
+The logger can be accessed and configured.
+</p>
+<pre>
+        
+        before_start do
+          AgentXmpp.logger.level = Logger::WARN 
+        end
+</pre>
+<h2>More Examples</h2>
+<p>
+More examples can be found at <a
+href="http://gist.github.com/160338">gist.github.com/160338</a>
+</p>
+<h2>Supported XEPs</h2>
+<ul>
+<li><p>
+XEP-0004 jabber:x:data Forms    <a
+href="http://xmpp.org/extensions/xep-0004.html">xmpp.org/extensions/xep-0004.html</a>
+</p>
+</li>
+<li><p>
+XEP-0030 Service Discovery      <a
+href="http://xmpp.org/extensions/xep-0030.html">xmpp.org/extensions/xep-0030.html</a>
+</p>
+</li>
+<li><p>
+XEP-0050 Ad-Hoc Commands        <a
+href="http://xmpp.org/extensions/xep-0050.html">xmpp.org/extensions/xep-0050.html</a>
+</p>
+</li>
+<li><p>
+XEP-0060 Publish Subscribe      <a
+href="http://xmpp.org/extensions/xep-0060.html">xmpp.org/extensions/xep-0060.html</a>
+</p>
+</li>
+<li><p>
+XEP-0092 Software Version       <a
+href="http://xmpp.org/extensions/xep-0092.html">xmpp.org/extensions/xep-0092.html</a>
+</p>
+</li>
+</ul>
+<h2>Message Processing Callbacks</h2>
+<p>
+<em>Message Processing Callbacks</em> are available to applications to
+extend the agent message processing work flow. To receive callbacks a
+delegate object must be provided that implements the callbacks of interest.
+</p>
+<pre>
+    after_connected do |connection|
+      connection.add_delegate(YourDelegate)
+    end
+</pre>
+<h3>Connection</h3>
+<pre>
+    on_connect(connection)
+
+    on_disconnect(connection)
+
+    on_did_not_connect(connection)
+</pre>
+<h3>Authentication</h3>
+<pre>
+    on_bind(connection)
+
+    on_preauthenticate_features(connection)
+
+    on_authenticate(connection)
+
+    on_did_not_authenticate(connection)
+
+    on_postauthenticate_features(connection)
+
+    on_start_session(connection)
+</pre>
+<h3>Presence</h3>
+<pre>
+    on_presence(connection, presence)
+
+    on_presence_subscribe(connection, presence)
+
+    on_presence_subscribed(connection, presence)
+
+    on_presence_unavailable(connection, presence)
+
+    on_presence_unsubscribed(connection, presence)
+    
+    on_presence_error(pipe, presence)
+</pre>
+<h3>Roster</h3>
+<pre>
+    on_roster_result(connection, stanza)
+
+    on_roster_set(connection, stanza)
+
+    on_roster_item(connection, roster_item)
+
+    on_remove_roster_item(connection, roster_item)
+
+    on_all_roster_items(connection)
+
+    on_update_roster_item_result(connection, item_jid)
+
+    on_update_roster_item_error(connection, item_jid)
+
+    on_remove_roster_item(connection, item_jid)
+
+    on_remove_roster_item_error(connection, item_jid)
+</pre>
+<h3>Service Discovery</h3>
+<pre>
+    on_version_result(connection, version)
+
+    on_version_get(connection, request)
+
+    on_version_error(connection, error)
+    
+    on_discoinfo_get(connection, request) 
+
+    on_discoinfo_result(connection, discoinfo)
+    
+    on_discoinfo_error(connection, error)
+    
+    on_discoitems_result(connection, discoitems)
+    
+    on_discoitems_get(connection, request)
+
+    on_discoitems_error(connection, result)
+            
+</pre>
+<h3>Applications</h3>
+<pre>
+    on_command_set(connection, stanza)
+
+    on_message_chat(connection, stanza)
+
+    on_message_normal(connection, stanza)
+
+    on_pubsub_event(connection, event, to, from)
+</pre>
+<h3>PubSub</h3>
+<pre>
+    on_publish_result(connection, result, node)
+
+    on_publish_error(connection, result, node)
+
+    on_discovery_of_pubsub_service(connection, jid, ident)
+    
+    on_discovery_of_pubsub_collection(connection, jid, node)
+      
+    on_discovery_of_pubsub_leaf(connection, jid, node)
+
+    on_discovery_of_user_pubsub_root(pipe, pubsub, node)
+
+    on_pubsub_subscriptions_result(connection, result)
+    
+    on_pubsub_subscriptions_error(connection, result)
+
+    on_pubsub_affiliations_result(connection, result)
+    
+    on_pubsub_affiliations_error(connection, result)
+
+    on_discovery_of_user_pubsub_root(connection, result)
+    
+    on_create_node_result(connection, node, result)    
+
+    on_create_node_error(connection, node, result)    
+
+    on_delete_node_result(connection, node, result)    
+
+    on_delete_node_error(connection, node, result)    
+
+    on_pubsub_subscribe_result(connection, result, node) 
+
+    on_pubsub_subscribe_error(connection, result, node) 
+
+    on_pubsub_subscribe_error_item_not_found(connection, result, node) 
+
+    on_pubsub_unsubscribe_result(connection, result, node) 
+
+    on_pubsub_unsubscribe_error(connection, result, node) 
+    
+</pre>
+<h3>ERRORS</h3>
+<pre>
+    on_unsupported_message(connection, stanza)
+</pre>
+<h2>Copyright</h2>
+<p>
+Copyright &#169; 2009 Troy Stribling. See LICENSE for details.
+</p>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

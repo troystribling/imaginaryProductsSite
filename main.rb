@@ -11,22 +11,24 @@ require 'post'
 
 ##########################################################################################################
 class Path
-  COMPANY               = '/'
-  PRODUCTS              = '/products' 
-  PRODUCTS_MARS_MISSION = PRODUCTS + '/mars-mission'
-  PRODUCTS_WEB_GNOSUS   = PRODUCTS + '/web-gnosus'
-  PROJECTS              = '/projects' 
-  PROJECTS_AGENT_XMPP   = PROJECTS + '/agent-xmpp'
-  PROJECTS_ZGOMOT       = PROJECTS + '/zgomot'
-  BLOG                  = '/blog' 
-  BLOG_EDIT             = BLOG + '/past/:year/:month/:day/:slug/edit'
-  BLOG_POSTS            = BLOG + '/posts'
-  BLOG_POSTS_NEW        = BLOG + '/posts/new'
-  BLOG_PAST             = BLOG + '/past'
-  BLOG_PAST_ITEM        = BLOG + '/past/:year/:month/:day/:slug'
-  BLOG_FEED             = BLOG + '/feed'
-  BLOG_RSS              = BLOG + '/rss'
-  BLOG_AUTH             = BLOG + '/auth'
+  COMPANY                   = '/'
+  PRODUCTS                  = '/products' 
+  PRODUCTS_MARS_MISSION     = PRODUCTS + '/mars-mission'
+  PRODUCTS_WEB_GNOSUS       = PRODUCTS + '/web-gnosus'
+  PROJECTS                  = '/projects' 
+  PROJECTS_AGENT_XMPP_DOCS  = PROJECTS + '/agent-xmpp/docs'
+  PROJECTS_AGENT_XMPP       = PROJECTS + '/agent-xmpp'
+  PROJECTS_ZGOMOT           = PROJECTS + '/zgomot'
+  PROJECTS_ZGOMOT_DOCS      = PROJECTS + '/zgomot/docs'
+  BLOG                      = '/blog' 
+  BLOG_EDIT                 = BLOG + '/past/:year/:month/:day/:slug/edit'
+  BLOG_POSTS                = BLOG + '/posts'
+  BLOG_POSTS_NEW            = BLOG + '/posts/new'
+  BLOG_PAST                 = BLOG + '/past'
+  BLOG_PAST_ITEM            = BLOG + '/past/:year/:month/:day/:slug'
+  BLOG_FEED                 = BLOG + '/feed'
+  BLOG_RSS                  = BLOG + '/rss'
+  BLOG_AUTH                 = BLOG + '/auth'
 end
 
 ##########################################################################################################
@@ -106,8 +108,18 @@ get Path::PROJECTS_AGENT_XMPP do
 end
 
 #---------------------------------------------------------------------------------------------------------
+get Path::PROJECTS_AGENT_XMPP_DOCS do
+  File.read('public/agent-xmpp/README_rdoc.html')
+end
+
+#---------------------------------------------------------------------------------------------------------
 get Path::PROJECTS_ZGOMOT do
 	erb :zgomot, :layout => false
+end
+
+#---------------------------------------------------------------------------------------------------------
+get Path::PROJECTS_ZGOMOT_DOCS do
+  File.read('public/zgomot/README_rdoc.html')
 end
 
 #---------------------------------------------------------------------------------------------------------
