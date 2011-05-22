@@ -451,7 +451,7 @@ li.menuItem a {
 /*******  vignette *******/
 #vignette-top, #vignette-bottom, #vignette-left, #vignette-right {
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   width: 100%; 
 }
@@ -618,7 +618,7 @@ li.menuItem a {
 /******* project zgomot *******/
 #zgomot-vignette-top, #zgomot-vignette-bottom, #zgomot-vignette-left, #zgomot-vignette-right {
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   width: 100%; 
 }
@@ -651,13 +651,13 @@ li.menuItem a {
 
 /******* project agent-xmpp *******/
 #agent {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 75;
 }
 #agent-xmpp-vignette-top, #agent-xmpp-vignette-bottom, #agent-xmpp-vignette-left, #agent-xmpp-vignette-right {
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   width: 100%; 
 }
