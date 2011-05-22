@@ -546,6 +546,66 @@ li.menuItem a {
   clear: right;
 }
 
+/******* projects *******/
+#projects {
+  margin: 0 auto;
+  padding-top: 30px;
+  width: 800px;
+}
+#projects ul{
+	margin: 0px;
+	padding: 0px;
+}
+#projects li.project {
+}
+#projects li.project .icon {
+  margin-left: 10px;
+  float:left;
+}
+#projects li.project .content {
+  float:right;
+  margin-right: 40px;
+  width: 560px;
+  clear right;
+  text-align: left;
+}
+#projects li.project .content h1 {
+	color: #696;
+  font-size: 120%;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+#projects li.project .content p {
+  margin: 0px;
+  font-size: 85%;
+}
+#projects li.project .content .more {
+  margin: 0px;
+  margin-top: 10px;
+}
+#projects li.project .content .more a {
+  text-decoration: none;
+	color: #AAA;
+  font-size: 85%;
+}
+#projects li.project {
+  margin-bottom: 40px;
+  background-color: #FFF;
+	list-style:none;
+  -moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-bottom-radius:15px;
+	-moz-box-shadow: 0 0 15px #BBB;
+	-webkit-box-shadow: 0 0 15px #BBB;
+	box-shadow: 0 0 15px #BBB;
+  border-style:solid;
+  border-width:1px;
+  border-color:#DDD;
+  clear: right;
+}
+
 /******* product webgnosus *******/
 #web-gnosus-background {
   width: 100%;
@@ -555,7 +615,7 @@ li.menuItem a {
   left: 0;
 }
 
-/******* product zgomot *******/
+/******* project zgomot *******/
 #zgomot-vignette-top, #zgomot-vignette-bottom, #zgomot-vignette-left, #zgomot-vignette-right {
   height: 100%;
   position: absolute;
@@ -589,7 +649,7 @@ li.menuItem a {
   right: 0;
 }
 
-/******* product agent-xmpp *******/
+/******* project agent-xmpp *******/
 #agent {
   position: absolute;
   right: 0;
