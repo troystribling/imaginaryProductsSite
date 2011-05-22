@@ -1,61 +1,62 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<title>AgentXMPP</title>
-	<link href="/main.css" rel="stylesheet" type="text/css" />
-  <script src='/javascript/jquery-1.5.2.min.js' type='text/javascript' charset='utf-8'></script>
-  <script src='/javascript/imaginaryProducts.js' type='text/javascript' charset='utf-8'></script>
-</head>
-
-<body "background-image: url('/agent-xmpp/agent-xmpp-background.png');">
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      setPageWidth();
-    });
-    window.onresize = function() {
-      setPageWidth();
-    }
-  </script>
- 
-  <div id="agent-xmpp-vignette-top"></div>
-  <div id="agent-xmpp-vignette-right"></div>
-  <div id="agent-xmpp-vignette-bottom"></div>
-  <div id="agent-xmpp-vignette-left"></div>
-  
-  <div id="content">
-    <div id="navigation-wrapper" style="height: 120px;">
-    	<div id="navigation">
-       	<img src="/agent-xmpp/agent-xmpp-name.png" class="logo">
-    	</div>
+<% content_for :agent_xmpp_content do %>
+  <div id="agent-xmpp-left">
+    <p>
+      The first Ruby application framework for writing automated XMPP clients that support Messaging, Ad-Hoc Commands and Publish Subscribe Events. 
+      Out of the box you get authentication, authorization, contacts and management statistics. 
+    </p>
+    <p>
+      Writing applications is easy.
+    </p>
+    <h1>Install</h1>
+    <div class="code">
+      <pre>
+    gem install agent_xmpp
+      </pre>
     </div>
+    <h1>Configure</h1>
+    <div class="code">
+      <pre>
+    # agent_xmpp.yml
+    jid: myapp@nowhere.com
+    password: secret
+    roster:
+        -
+            jid:you@home.com
+            groups: [admin]
+
+    publish:
+        - 
+            node: time
+            title: "Curent Time"   
+      </pre>
+    </div>
+    <h1>Code</h1>
+    <div class="code">
+      <pre>
+    # myapp.rb
+    require 'rubygems'
+    require 'agent_xmpp'
+
+    command 'hello' do
+      'Hello World'
+    end 
     
-    <div id="page-wrapper" style="padding-bottom: 78px;">
-     	<img id="agent" src="/agent-xmpp/agent-xmpp-background-agent.png">
-      <div id="page">
-      </div>
+    discovered_pubsub_node do |service, node|
+      EventMachine::PeriodicTimer.new(600) do
+        publish_time(Time.now.to_s)
+      end  
+    end             
+      </pre>
     </div>
-  </div>
-
-  <div id="footer-wrapper" style="background-color: b50012; border-top: 3px solid #000; margin-top: -78px;">
-    <div id="footer">
-      <div>
-     	  <a href="/"><img src="/agent-xmpp/agent-xmpp-imaginaryProducts.png" class="logo"></a>
-     	</div>
-      <ul>
-        <li>
-          <img src="/agent-xmpp/agent-xmpp-email.png" alt="email imaginaryProducts"/>
-        </li>
-        <li>
-          <a href="http://www.twitter.com/imaginaryprod">
-            <img src="/agent-xmpp/agent-xmpp-twitter.png" alt="Follow imaginaryprod on Twitter"/>
-          </a>
-        </li>
-      </ul>
+    <h1>Run</h1>
+    <div class="code">
+      <pre>
+    ruby myapp.rb
+      </pre>
     </div>
-  </div>
-  
-</body>
-</html>
+  </div>  
+  <div id="agent-xmpp-right">
+    <img id="agent" src="/agent-xmpp/agent-xmpp-background-agent.png">
+    <h1><a href="/projects/agent-xmpp/docs">Documentation</a></h1>
+  </div>  
+<% end %>

@@ -96,20 +96,18 @@ get Path::PROJECTS do
 end
 
 #---------------------------------------------------------------------------------------------------------
-# projects
-#---------------------------------------------------------------------------------------------------------
 get Path::PROJECTS do
 	erb :projects, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
 get Path::PROJECTS_AGENT_XMPP do
-	erb :agent_xmpp, :layout => false
+	erb :agent_xmpp, :layout => :agent_xmpp_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
 get Path::PROJECTS_AGENT_XMPP_DOCS do
-  File.read('public/agent-xmpp/README_rdoc.html')
+	erb :agent_xmpp_docs, :layout => :agent_xmpp_layout
 end
 
 #---------------------------------------------------------------------------------------------------------

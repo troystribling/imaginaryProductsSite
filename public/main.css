@@ -650,10 +650,49 @@ li.menuItem a {
 }
 
 /******* project agent-xmpp *******/
-#agent {
-  position: fixed;
-  right: 0;
-  bottom: 75;
+#agent-xmpp-right {
+  position: relative;
+  top: 27px;
+  right: -3px;
+}
+#agent-xmpp-left {
+  max-width: 475px;
+  padding-top: 30px;
+  margin-left: 20px;
+  float: left;
+}
+#agent-xmpp-left p {
+  font-family:'Lucida Casual', 'Comic Sans MS';
+  margin-bottom: 30px;
+  text-align: left;
+}
+#agent-xmpp-left a {
+  text-decoration: none;
+  color: #c90014; 
+}
+#agent-xmpp-left h1 {
+  font-family:'Lucida Casual', 'Comic Sans MS';
+  font-size: 150%;
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 20px;
+}
+#agent-xmpp-left .code {
+  font-family:'Lucida Casual', 'Comic Sans MS';
+  text-align: center;
+}
+#agent-xmpp-left .code pre {
+  font-family:'Lucida Casual', 'Comic Sans MS';
+  background-color: #fff;
+  color: #000;
+  text-align: left;
+  border: 3px solid #000;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-top: 20px;
 }
 #agent-xmpp-vignette-top, #agent-xmpp-vignette-bottom, #agent-xmpp-vignette-left, #agent-xmpp-vignette-right {
   height: 100%;

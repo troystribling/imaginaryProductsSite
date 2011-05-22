@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>AgentXMPP</title>
+	<link href="/main.css" rel="stylesheet" type="text/css" />
+  <script src='/javascript/jquery-1.5.2.min.js' type='text/javascript' charset='utf-8'></script>
+  <script src='/javascript/imaginaryProducts.js' type='text/javascript' charset='utf-8'></script>
+</head>
+
+<body "background-image: url('/agent-xmpp/agent-xmpp-background.png');  font-family: Comic Sans MS, arial, helvetica, sans-serif;">
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+      setPageWidth();
+    });
+    window.onresize = function() {
+      setPageWidth();
+    }
+  </script>
+ 
+  <div id="agent-xmpp-vignette-top"></div>
+  <div id="agent-xmpp-vignette-right"></div>
+  <div id="agent-xmpp-vignette-bottom"></div>
+  <div id="agent-xmpp-vignette-left"></div>
+  
+  <div id="content">
+    <div id="navigation-wrapper" style="background-color: b50012; border-bottom: 3px solid #000; height: 130px;">
+    	<div id="navigation">
+       	<img src="/agent-xmpp/agent-xmpp-name.png" class="logo">
+    	</div>
+    </div>
+    
+    <div id="page-wrapper" style="padding-bottom: 78px;">
+      <div id="page">
+      	<% yield_content :agent_xmpp_content %>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-wrapper" style="background-color: b50012; border-top: 3px solid #000; margin-top: -78px;">
+    <div id="footer">
+      <div>
+     	  <a href="/"><img src="/agent-xmpp/agent-xmpp-imaginaryProducts.png" class="logo"></a>
+     	</div>
+      <ul>
+        <li>
+          <img src="/agent-xmpp/agent-xmpp-email.png" alt="email imaginaryProducts"/>
+        </li>
+        <li>
+          <a href="http://www.twitter.com/imaginaryprod">
+            <img src="/agent-xmpp/agent-xmpp-twitter.png" alt="Follow imaginaryprod on Twitter"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+</body>
+</html>
