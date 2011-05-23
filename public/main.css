@@ -655,6 +655,7 @@ li.menuItem a {
   float: right;
   width: 450px;
   margin-top: 27px;
+  margin-bottom: 30px;
 }
 #agent-xmpp-right img {
 }
@@ -669,19 +670,35 @@ li.menuItem a {
   margin-bottom: 20px;
 }
 #agent-xmpp-right p {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: left;
 }
 #agent-xmpp-right ul {
   list-style-type: none;
+  text-align: left;
+  margin-bottom: 20px;
 }
 #agent-xmpp-right li {
 }
+#agent-xmpp-right li a {
+  text-decoration: none;
+  color: #999;
+} 
+#agent-xmpp-right li a:hover {
+  text-decoration: underline;
+} 
+#agent-xmpp-right li a:visited {
+  text-decoration: none;
+} 
+#agent-xmpp-right li a:active {
+  text-decoration: none;
+} 
 #agent-xmpp-left {
   font-family:'Lucida Casual', 'Comic Sans MS';
   max-width: 475px;
   padding-top: 30px;
   margin-left: 20px;
+  margin-bottom: 30px;
   float: left;
 }
 #agent-xmpp-left h1 {
@@ -691,7 +708,7 @@ li.menuItem a {
   margin: 0;
 }
 #agent-xmpp-left p {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: left;
 }
 #agent-xmpp-left a {
@@ -759,8 +776,6 @@ li.menuItem a {
   margin: 0px;
   margin-left: 10px;
   text-shadow: 0px 0px 0px #666;
-} 
-#agent-xmpp-navigation li a {
   text-decoration: none;
   color: #000;
 } 
@@ -774,6 +789,17 @@ li.menuItem a {
 #agent-xmpp-navigation li a:active {
   text-decoration: none;
 } 
-#agent-xmpp-navigation li a:active {
-  text-decoration: none;
-} 
+
+/******* documentation *******/
+#documentation pre {
+  background-color: #fff;
+  color: #000;
+  text-align: left;
+  font-size: 80%;
+  border: 5px solid #000;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-top: 20px;
+}
