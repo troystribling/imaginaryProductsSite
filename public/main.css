@@ -651,18 +651,46 @@ li.menuItem a {
 
 /******* project agent-xmpp *******/
 #agent-xmpp-right {
-  position: relative;
-  top: 27px;
-  right: -3px;
+  font-family:'Lucida Casual', 'Comic Sans MS';
+  float: right;
+  width: 450px;
+  margin-top: 27px;
+}
+#agent-xmpp-right img {
+}
+#agent-xmpp-right .info {
+  margin-top: 20px;
+}
+#agent-xmpp-right h1 {
+  font-size: 150%;
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 20px;
+}
+#agent-xmpp-right p {
+  margin-bottom: 30px;
+  text-align: left;
+}
+#agent-xmpp-right ul {
+  list-style-type: none;
+}
+#agent-xmpp-right li {
 }
 #agent-xmpp-left {
+  font-family:'Lucida Casual', 'Comic Sans MS';
   max-width: 475px;
   padding-top: 30px;
   margin-left: 20px;
   float: left;
 }
+#agent-xmpp-left h1 {
+  font-size: 150%;
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+}
 #agent-xmpp-left p {
-  font-family:'Lucida Casual', 'Comic Sans MS';
   margin-bottom: 30px;
   text-align: left;
 }
@@ -670,24 +698,15 @@ li.menuItem a {
   text-decoration: none;
   color: #c90014; 
 }
-#agent-xmpp-left h1 {
-  font-family:'Lucida Casual', 'Comic Sans MS';
-  font-size: 150%;
-  font-weight: bold;
-  text-align: left;
-  margin: 0;
-  margin-bottom: 20px;
-}
 #agent-xmpp-left .code {
-  font-family:'Lucida Casual', 'Comic Sans MS';
   text-align: center;
 }
 #agent-xmpp-left .code pre {
-  font-family:'Lucida Casual', 'Comic Sans MS';
   background-color: #fff;
   color: #000;
   text-align: left;
-  border: 3px solid #000;
+  font-size: 80%;
+  border: 5px solid #000;
   margin-bottom: 20px;
   margin-left: 0px;
   padding-left: 0px;
@@ -726,3 +745,35 @@ li.menuItem a {
   background-image: -webkit-gradient(linear, right center, left center, from(#efeeea), to(rgba(239, 238, 234, 0)));
   right: 0;
 }
+#agent-xmpp-navigation ul {
+  font-family:'Lucida Casual', 'Comic Sans MS';
+  list-style-type: none;
+  float: right;
+  margin-top: 98px;
+  margin-bottom: 0px;
+  padding-right: 20px;
+}
+#agent-xmpp-navigation li a {
+  display: inline;
+  font-size: 125%;
+  margin: 0px;
+  margin-left: 10px;
+  text-shadow: 0px 0px 0px #666;
+} 
+#agent-xmpp-navigation li a {
+  text-decoration: none;
+  color: #000;
+} 
+#agent-xmpp-navigation li a:hover {
+  color: #f2f05c;
+  text-decoration: none;
+} 
+#agent-xmpp-navigation li a:visited {
+  text-decoration: none;
+} 
+#agent-xmpp-navigation li a:active {
+  text-decoration: none;
+} 
+#agent-xmpp-navigation li a:active {
+  text-decoration: none;
+} 

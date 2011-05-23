@@ -12,12 +12,6 @@
 <body "background-image: url('/agent-xmpp/agent-xmpp-background.png');  font-family: Comic Sans MS, arial, helvetica, sans-serif;">
   
   <script type="text/javascript">
-    $(document).ready(function() {
-      setPageWidth();
-    });
-    window.onresize = function() {
-      setPageWidth();
-    }
   </script>
  
   <div id="agent-xmpp-vignette-top"></div>
@@ -26,20 +20,21 @@
   <div id="agent-xmpp-vignette-left"></div>
   
   <div id="content">
-    <div id="navigation-wrapper" style="background-color: b50012; border-bottom: 3px solid #000; height: 130px;">
+    <div id="navigation-wrapper" style="background-color: b50012; border-bottom: 5px solid #000; height: 130px;">
     	<div id="navigation">
        	<img src="/agent-xmpp/agent-xmpp-name.png" class="logo">
+      	<% yield_content :navigation %>
     	</div>
     </div>
     
     <div id="page-wrapper" style="padding-bottom: 78px;">
       <div id="page">
-      	<% yield_content :agent_xmpp_content %>
+      	<% yield_content :page %>
       </div>
     </div>
   </div>
 
-  <div id="footer-wrapper" style="background-color: b50012; border-top: 3px solid #000; margin-top: -78px;">
+  <div id="footer-wrapper" style="background-color: b50012; border-top: 5px solid #000; margin-top: -78px;">
     <div id="footer">
       <div>
      	  <a href="/"><img src="/agent-xmpp/agent-xmpp-imaginaryProducts.png" class="logo"></a>

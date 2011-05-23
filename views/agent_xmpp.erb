@@ -1,4 +1,11 @@
-<% content_for :agent_xmpp_content do %>
+<% content_for :navigation do %>
+  <div id="agent-xmpp-navigation">
+    <ul>
+      <li><a href="/projects/agent-xmpp/docs">Documentation</a></li>
+    </ul>
+  </div>
+<% end %>
+<% content_for :page do %>
   <div id="agent-xmpp-left">
     <p>
       The first Ruby application framework for writing automated XMPP clients that support Messaging, Ad-Hoc Commands and Publish Subscribe Events. 
@@ -10,53 +17,70 @@
     <h1>Install</h1>
     <div class="code">
       <pre>
-    gem install agent_xmpp
+  gem install agent_xmpp
       </pre>
     </div>
     <h1>Configure</h1>
     <div class="code">
       <pre>
-    # agent_xmpp.yml
-    jid: myapp@nowhere.com
-    password: secret
-    roster:
-        -
-            jid:you@home.com
-            groups: [admin]
+  # agent_xmpp.yml
+  jid: myapp@nowhere.com
+  password: secret
+  roster:
+      -
+          jid:you@home.com
+          groups: [admin]
 
-    publish:
-        - 
-            node: time
-            title: "Curent Time"   
+  publish:
+      - 
+          node: time
+          title: "Curent Time"   
       </pre>
     </div>
     <h1>Code</h1>
     <div class="code">
       <pre>
-    # myapp.rb
-    require 'rubygems'
-    require 'agent_xmpp'
+  # myapp.rb
+  require 'rubygems'
+  require 'agent_xmpp'
 
-    command 'hello' do
-      'Hello World'
-    end 
-    
-    discovered_pubsub_node do |service, node|
-      EventMachine::PeriodicTimer.new(600) do
-        publish_time(Time.now.to_s)
-      end  
-    end             
+  command 'hello' do
+    'Hello World'
+  end 
+  
+  discovered_pubsub_node do |service, node|
+    EventMachine::PeriodicTimer.new(600) do
+      publish_time(Time.now.to_s)
+    end  
+  end             
       </pre>
     </div>
     <h1>Run</h1>
     <div class="code">
       <pre>
-    ruby myapp.rb
+  ruby myapp.rb
       </pre>
     </div>
   </div>  
   <div id="agent-xmpp-right">
     <img id="agent" src="/agent-xmpp/agent-xmpp-background-agent.png">
-    <h1><a href="/projects/agent-xmpp/docs">Documentation</a></h1>
+    <div class="info">
+      <h1>Clients</h1>
+      <p>
+        The XMPP protocols supported by AgentXMPP are not supported by all XMPP clients. The following clients have been tested and provide full support. 
+      </p>
+      <ul>
+        <li><a href="/products/web-gnosus"><strong>web.gnos.us</strong></a></li>
+        <li><a href="http://www.gajim.org/"><strong>gajim</strong></a></li>
+      </ul>
+      <h1>Supported XEPs</h1>
+      <ul>
+        <li><a href="http://xmpp.org/extensions/xep-0004.html">XEP-0004 jabber:x:data Forms</a></li>
+        <li><a href="http://xmpp.org/extensions/xep-0030.html">XEP-0030 Service Discovery</a></li>
+        <li><a href="http://xmpp.org/extensions/xep-0050.html">XEP-0050 Ad-Hoc Commands</a></li>
+        <li><a href="http://xmpp.org/extensions/xep-0060.html">XEP-0060 Publish Subscribe</a></li>
+        <li><a href="http://xmpp.org/extensions/xep-0092.html">XEP-0092 Software Version</a></li>      
+      </ul>
+    </div>
   </div>  
 <% end %>
