@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>zgomot</title>
+	<link href="/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color: #DDD;">
+  
+  <script type="text/javascript">
+  </script>
+  
+  <div id="zgomot-vignette-top"></div>
+  <div id="zgomot-vignette-right"></div>
+  <div id="zgomot-vignette-bottom"></div>
+  <div id="zgomot-vignette-left"></div>
+    
+  <div id="content">
+    <div id="navigation-wrapper" style="height: 60px;">
+    	<div id="navigation">
+       	<a href = "/projects/zgomot"><img src="/zgomot/zgomot-name.png" class="logo"></a>
+      	<% yield_content :navigation %>
+    	</div>
+    </div>
+
+    <div id="page-wrapper">
+      <div id="page">
+      	<% yield_content :page %>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-wrapper">
+    <div id="footer">
+      <div>
+     	  <a href="/"><img src="/zgomot/zgomot-imaginaryProducts.png" class="logo"></a>
+     	</div>
+      <ul>
+        <li>
+          <img src="/zgomot/zgomot-email.png" alt="email imaginaryProducts"/>
+        </li>
+        <li>
+          <a href="http://www.twitter.com/imaginaryprod">
+            <img src="/zgomot/zgomot-twitter.png" alt="Follow imaginaryprod on Twitter"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+</body>
+</html>

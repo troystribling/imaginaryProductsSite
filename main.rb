@@ -10,28 +10,6 @@ require 'syntax/convertors/html'
 require 'post'
 
 ##########################################################################################################
-class Path
-  COMPANY                   = '/'
-  PRODUCTS                  = '/products' 
-  PRODUCTS_MARS_MISSION     = PRODUCTS + '/mars-mission'
-  PRODUCTS_WEB_GNOSUS       = PRODUCTS + '/web-gnosus'
-  PROJECTS                  = '/projects' 
-  PROJECTS_AGENT_XMPP_DOCS  = PROJECTS + '/agent-xmpp/docs'
-  PROJECTS_AGENT_XMPP       = PROJECTS + '/agent-xmpp'
-  PROJECTS_ZGOMOT           = PROJECTS + '/zgomot'
-  PROJECTS_ZGOMOT_DOCS      = PROJECTS + '/zgomot/docs'
-  BLOG                      = '/blog' 
-  BLOG_EDIT                 = BLOG + '/past/:year/:month/:day/:slug/edit'
-  BLOG_POSTS                = BLOG + '/posts'
-  BLOG_POSTS_NEW            = BLOG + '/posts/new'
-  BLOG_PAST                 = BLOG + '/past'
-  BLOG_PAST_ITEM            = BLOG + '/past/:year/:month/:day/:slug'
-  BLOG_FEED                 = BLOG + '/feed'
-  BLOG_RSS                  = BLOG + '/rss'
-  BLOG_AUTH                 = BLOG + '/auth'
-end
-
-##########################################################################################################
 set :environment, :development
 configure do
 	require 'ostruct'
@@ -67,69 +45,76 @@ end
 #---------------------------------------------------------------------------------------------------------
 # company
 #---------------------------------------------------------------------------------------------------------
-get Path::COMPANY do
+get '/' do
 	erb :index, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
 # products
 #---------------------------------------------------------------------------------------------------------
-get Path::PRODUCTS do
+get '/products' do
 	erb :products, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::PRODUCTS_MARS_MISSION do
+get '/products/mars-mission' do
 	erb :mars_mission, :layout => false
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::PRODUCTS_WEB_GNOSUS do
+get '/products/web-gnosus' do
 	erb :web_gnosus, :layout => false
 end
 
 #---------------------------------------------------------------------------------------------------------
-# projects
+# projects agent-xmpp
 #---------------------------------------------------------------------------------------------------------
-get Path::PROJECTS do
+get '/projects' do
 	erb :projects, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::PROJECTS do
-	erb :projects, :layout => :layout
-end
-
-#---------------------------------------------------------------------------------------------------------
-get Path::PROJECTS_AGENT_XMPP do
+get '/projects/agent-xmpp' do
 	erb :agent_xmpp, :layout => :agent_xmpp_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::PROJECTS_AGENT_XMPP_DOCS do
+get '/projects/agent-xmpp/docs' do
 	erb :agent_xmpp_docs, :layout => :agent_xmpp_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::PROJECTS_ZGOMOT do
-	erb :zgomot, :layout => false
+get '/projects/agent-xmpp/videos/web-gnosus' do
+	erb :agent_xmpp_videos_web_gnosus, :layout => :agent_xmpp_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::PROJECTS_ZGOMOT_DOCS do
-  File.read('public/zgomot/README_rdoc.html')
+get '/projects/agent-xmpp/videos/gajim' do
+	erb :agent_xmpp_videos_gajim, :layout => :agent_xmpp_layout
+end
+
+#---------------------------------------------------------------------------------------------------------
+# projects zgomot
+#---------------------------------------------------------------------------------------------------------
+get '/projects/zgomot' do
+	erb :zgomot, :layout => :zgomot_layout
+end
+
+#---------------------------------------------------------------------------------------------------------
+get '/projects/zgomot/docs' do
+	erb :zgomot_docs, :layout => :zgomot_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
 # blog
 #---------------------------------------------------------------------------------------------------------
-get Path::BLOG do
+get '/blog' do
 	posts = Post.reverse_order(:created_at).limit(10)
 	erb :blog, :locals => { :posts => posts }, :layout => false
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::BLOG_PAST_ITEM + '/' do
+get '/blog/past/:year/:month/:day/:slug/' do
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post
 	@title = post.title
@@ -137,50 +122,50 @@ get Path::BLOG_PAST_ITEM + '/' do
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::BLOG_PAST_ITEM do
+get '/blog/past/:year/:month/:day/:slug' do
 	redirect "#{Path::BLOG_PAST}/#{params[:year]}/#{params[:month]}/#{params[:day]}/#{params[:slug]}/", 301
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::BLOG_PAST do
+get '/blog/past' do
 	posts = Post.reverse_order(:created_at)
 	@title = "Archive"
 	erb :archive, :locals => { :posts => posts }, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::BLOG_FEED do
+get '/blog/feed' do
 	@posts = Post.reverse_order(:created_at).limit(20)
 	content_type 'application/atom+xml', :charset => 'utf-8'
 	builder :feed
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::BLOG_RSS do
-	redirect Path::BLOG_FEED, 301
+get '/blog/rss' do
+	redirect '/blog/feed', 301
 end
 
 #---------------------------------------------------------------------------------------------------------
 # admin
 #---------------------------------------------------------------------------------------------------------
-get Path::BLOG_AUTH do
+get '/blog/auth' do
 	erb :auth, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-post Path::BLOG_AUTH do
+post '/blog/auth' do
 	response.set_cookie(Blog.admin_cookie_key, :value => Blog.admin_cookie_value) if params[:password] == Blog.admin_password
 	redirect '/blog'
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::BLOG_POSTS_NEW do
+get '/blog/posts/new' do
 	auth
 	erb :new, :locals => {:post => Post.new, :url => '/blog/posts'}, :layout => :layout
 end
 
 #---------------------------------------------------------------------------------------------------------
-post Path::BLOG_POSTS do
+post '/blog/posts' do
 	auth
 	post = Post.new(:title => params[:title], :body => params[:body], :created_at => Time.now, :slug => Post.make_slug(params[:title]))
 	post.save
@@ -188,7 +173,7 @@ post Path::BLOG_POSTS do
 end
 
 #---------------------------------------------------------------------------------------------------------
-get Path::BLOG_EDIT do
+get '/blog/past/:year/:month/:day/:slug/edit' do
 	auth
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post
@@ -196,7 +181,7 @@ get Path::BLOG_EDIT do
 end
 
 #---------------------------------------------------------------------------------------------------------
-post Path::BLOG_PAST_ITEM + '/' do
+post '/blog/past/:year/:month/:day/:slug/' do
 	auth
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post

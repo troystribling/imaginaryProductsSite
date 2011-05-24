@@ -160,7 +160,7 @@ h1 {
   background-color: #FFF;
   -moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
-	border-bottom-radius: 15px;
+	border-radius: 15px;
 	border: 1px solid #AAA;
 	-moz-box-shadow: 0 0 15px #BBB;
 	-webkit-box-shadow: 0 0 15px #BBB;
@@ -403,7 +403,7 @@ pre span.symbol { color: #008B8B; }
   box-shadow: 0 0 15px #666;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
-  border-bottom-radius: 15px;
+  border-radius: 15px;
   clear: both;
 }
 #slides {
@@ -536,7 +536,7 @@ li.menuItem a {
 	list-style:none;
   -moz-border-radius:15px;
 	-webkit-border-radius:15px;
-	border-bottom-radius:15px;
+	border-radius:15px;
 	-moz-box-shadow: 0 0 15px #BBB;
 	-webkit-box-shadow: 0 0 15px #BBB;
 	box-shadow: 0 0 15px #BBB;
@@ -596,7 +596,7 @@ li.menuItem a {
 	list-style:none;
   -moz-border-radius:15px;
 	-webkit-border-radius:15px;
-	border-bottom-radius:15px;
+	border-radius:15px;
 	-moz-box-shadow: 0 0 15px #BBB;
 	-webkit-box-shadow: 0 0 15px #BBB;
 	box-shadow: 0 0 15px #BBB;
@@ -648,6 +648,87 @@ li.menuItem a {
   background-image: -webkit-gradient(linear, right center, left center, from(#aaa), to(rgba(221, 221, 221, 0)));
   right: 0;
 }
+#zgomot-navigation ul {
+  list-style-type: none;
+  float: right;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  padding-right: 20px;
+}
+#zgomot-navigation li a {
+  display: inline;
+  font-size: 125%;
+  margin: 0px;
+  margin-left: 10px;
+  color: #1f5bf3;
+  text-shadow: 0px 0px 2px #4e7fff;
+  text-decoration: none;
+} 
+#zgomot-navigation li a:hover {
+  text-shadow: 0px 0px 3px #888;
+  color: #333;
+  text-decoration: none;
+} 
+#zgomot-navigation li a:visited {
+  text-decoration: none;
+} 
+#zgomot-navigation li a:active {
+  text-decoration: none;
+} 
+
+/******* zgomot-documentation documentation *******/
+#zgomot-documentation {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+#zgomot-documentation #documentation pre {
+  background-color: #EEE;
+  color: #000;
+  text-align: left;
+  font-size: 80%;
+  border: 2px solid #AAA;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-top: 20px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;1
+}
+#zgomot-documentation #documentation p {
+  margin-bottom: 20px;;
+  text-align: left;
+}
+#zgomot-documentation #documentation h2 {
+  margin-bottom: 20px;;
+  text-align: left;
+}
+#zgomot-documentation #documentation h3 {
+  margin-bottom: 20px;;
+  text-align: left;
+}
+#zgomot-documentation #documentation h4 {
+  margin-bottom: 20px;;
+  text-align: left;
+}
+#zgomot-documentation #documentation ul {
+  margin-left: 40px;
+}
+#zgomot-documentation #documentation a {
+  color: #2059ea;
+  text-decoration: none;
+} 
+#zgomot-documentation #documentation a:hover {
+  text-decoration: none;
+} 
+#zgomot-documentation #documentation a:visited {
+  text-decoration: none;
+} 
+#zgomot-documentation #documentation a:active {
+  text-decoration: none;
+} 
 
 /******* project agent-xmpp *******/
 #agent-xmpp-right {
@@ -790,8 +871,13 @@ li.menuItem a {
   text-decoration: none;
 } 
 
-/******* documentation *******/
-#documentation pre {
+/******* agent-xmpp-documentation documentation *******/
+#agent-xmpp-documentation {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+#agent-xmpp-documentation #documentation pre {
   background-color: #fff;
   color: #000;
   text-align: left;
@@ -803,3 +889,30 @@ li.menuItem a {
   padding-bottom: 0px;
   padding-top: 20px;
 }
+#agent-xmpp-documentation #documentation p {
+  margin-bottom: 20px;;
+  text-align: left;
+}
+#agent-xmpp-documentation #documentation h2 {
+  margin-bottom: 20px;;
+  text-align: left;
+}
+#agent-xmpp-documentation #documentation h3 {
+  margin-bottom: 20px;;
+  text-align: left;
+}
+#agent-xmpp-documentation #documentation ul {
+  margin-left: 40px;
+}
+#agent-xmpp-documentation #documentation a {
+  text-decoration: none;
+} 
+#agent-xmpp-documentation #documentation a:hover {
+  text-decoration: none;
+} 
+#agent-xmpp-documentation #documentation a:visited {
+  text-decoration: none;
+} 
+#agent-xmpp-documentation #documentation a:active {
+  text-decoration: none;
+} 
