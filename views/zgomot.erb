@@ -1,9 +1,63 @@
 <% content_for :navigation do %>
-  <div id="zgomot-navigation">
-    <ul>
-      <li><a href="/projects/zgomot/docs">Documentation</a></li>
-    </ul>
-  </div>
 <% end %>
 <% content_for :page do %>
+   <a href="https://github.com/troystribling/zgomot"><img style="position: absolute; top: 0; right: 0; border: 0;"            src="https://d3nwyuy0nl342s.cloudfront.net/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>  
+   <div id="zgomot-left">
+    <p>
+      zgomot is a Ruby DSL for composing MIDI music. It provides structures that support programming of algorithmic music with abstractions
+      that easily allow compositions to dynamically change key.
+    </p>
+    <p>
+      Writing a program that goes through scales is easy.
+    </p>
+    <h1>Install</h1>
+    <div class="code">
+      <pre>
+  gem install zgomot
+      </pre>
+    </div>
+    <h1>Configure</h1>
+    <div class="code">
+      <pre>
+  # zgomot.yml
+  time_signature: 4/4
+  beats_per_minute: 120
+  resolution: 1/64    
+      </pre>
+    </div>
+    <h1>Code</h1>
+    <div class="code">
+      <pre>
+  # mytune.rb
+  require 'rubygems'
+  require 'zgomot'
+
+  str 'scales' do 
+    ch << [np([:C,5]),
+           np([:C,5]).reverse!.shift, 
+           n(:R)]
+  end
+
+  play
+      </pre>
+    </div>
+    <h1>Run</h1>
+    <div class="code">
+      <pre>
+  ruby mytune.rb
+      </pre>
+    </div>
+  </div>  
+  <div id="zgomot-right">
+    <div class="info">
+      <h1>Documentation</h1>
+      <ul>
+        <li><a href="/projects/zgomot/docs">README</a></li>
+      </ul>
+      <h1>Artists</h1>
+      <ul>
+        <li><a href="https://github.com/troystribling/imaginaryProduct"><strong>imaginaryProduct</strong></a></li>
+      </ul>
+    </div>
+  </div>  
 <% end %>

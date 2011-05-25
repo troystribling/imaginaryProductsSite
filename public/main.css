@@ -660,13 +660,13 @@ li.menuItem a {
   font-size: 125%;
   margin: 0px;
   margin-left: 10px;
-  color: #1f5bf3;
-  text-shadow: 0px 0px 2px #4e7fff;
+  color: #777;
+  text-shadow: 0px 0px 4px #AAA;
   text-decoration: none;
 } 
 #zgomot-navigation li a:hover {
-  text-shadow: 0px 0px 3px #888;
   color: #333;
+  text-shadow: 0px 0px 4px #888;
   text-decoration: none;
 } 
 #zgomot-navigation li a:visited {
@@ -675,6 +675,88 @@ li.menuItem a {
 #zgomot-navigation li a:active {
   text-decoration: none;
 } 
+#zgomot-right {
+  float: right;
+  width: 350px;
+  margin-top: 27px;
+  margin-bottom: 30px;
+}
+#zgomot-right img {
+}
+#zgomot-right .info {
+  margin-top: 0px;
+}
+#zgomot-right h1 {
+  font-size: 125%;
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 20px;
+}
+#zgomot-right p {
+  margin-bottom: 20px;
+  text-align: left;
+}
+#zgomot-right ul {
+  list-style-type: none;
+  text-align: left;
+  margin-bottom: 20px;
+}
+#zgomot-right li {
+}
+#zgomot-right li a {
+  text-decoration: none;
+  color: #999;
+} 
+#zgomot-right li a:hover {
+  text-decoration: underline;
+} 
+#zgomot-right li a:visited {
+  text-decoration: none;
+} 
+#zgomot-right li a:active {
+  text-decoration: none;
+} 
+#zgomot-left {
+  width: 550px;
+  padding-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  float: left;
+}
+#zgomot-left h1 {
+  font-size: 150%;
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 10px;
+}
+#zgomot-left p {
+  margin-bottom: 20px;
+  text-align: left;
+}
+#zgomot-left a {
+  text-decoration: none;
+  color: #c90014; 
+}
+#zgomot-left .code {
+  text-align: center;
+}
+#zgomot-left .code pre {
+  background-color: #EEE;
+  color: #000;
+  text-align: left;
+  font-size: 80%;
+  border: 2px solid #AAA;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-top: 20px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;1
+}
 
 /******* zgomot-documentation documentation *******/
 #zgomot-documentation {
@@ -744,7 +826,7 @@ li.menuItem a {
   margin-top: 20px;
 }
 #agent-xmpp-right h1 {
-  font-size: 150%;
+  font-size: 125%;
   font-weight: bold;
   text-align: left;
   margin: 0;
@@ -787,6 +869,7 @@ li.menuItem a {
   font-weight: bold;
   text-align: left;
   margin: 0;
+  margin-bottom: 10px;
 }
 #agent-xmpp-left p {
   margin-bottom: 20px;
