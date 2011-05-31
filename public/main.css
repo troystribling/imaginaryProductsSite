@@ -757,6 +757,19 @@ li.menuItem a {
   -webkit-border-radius: 15px;
   border-radius: 15px;1
 }
+#zgomot-left .section {
+  text-align: center;
+  background-color: #EEE;
+  color: #000;
+  text-align: left;
+  font-size: 80%;
+  border: 2px solid #AAA;
+  padding: 20px;
+  margin-bottom: 20px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;1
+}
 
 /******* zgomot-documentation documentation *******/
 #zgomot-documentation {
