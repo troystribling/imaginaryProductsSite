@@ -21,6 +21,7 @@
   <script type="text/javascript">
     $(document).ready(function() {
       setPageWidth();
+      showVignette('company');
     });
     window.onresize = function() {
       setPageWidth();
@@ -28,10 +29,6 @@
   </script>
   
   <% yield_content :canvas %>
-  <div id="vignette-top"></div>
-  <div id="vignette-right"></div>
-  <div id="vignette-bottom"></div>
-  <div id="vignette-left"></div>
     
   <div id="content">
     <div id="navigation-wrapper">

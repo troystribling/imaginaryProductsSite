@@ -10,3 +10,13 @@ function setPageWidth() {
   $('#navigation').width(page_width);
   $('#footer').width(page_width);
 }
+function showVignette (product) {
+  var uagent = navigator.userAgent.toLowerCase();
+  var vignette = '<div id="'+product+'-vignette-top"></div>' +
+                 '<div id="'+product+'-vignette-right"></div>' +
+                 '<div id="'+product+'-vignette-bottom"></div>' +
+                 '<div id="'+product+'-vignette-left"></div>';
+  if (uagent.search('ipad') == -1 && uagent.search('ipod') == -1 && uagent.search('iphone') == -1) {
+    $('#content').before(vignette)               
+  }
+}
