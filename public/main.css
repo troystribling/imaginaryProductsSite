@@ -462,23 +462,23 @@ li.menuItem a {
   width: 20%; 
 }
 #company-vignette-top {
-  background-image: -moz-linear-gradient(100% 100% 90deg, rgba(238, 238, 238, 0), #ccc );
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(rgba(238, 238, 238, 0)));
+  background-image: -moz-linear-gradient(100% 100% 90deg, rgba(238, 238, 238, 0), #ddd );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ddd), to(rgba(238, 238, 238, 0)));
   top: 0; 
 }
 #company-vignette-bottom{
-  background-image: -moz-linear-gradient(100% 100% 90deg, #ccc, rgba(238, 238, 238, 0) );
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238, 238, 238, 0)), to(#ccc));
+  background-image: -moz-linear-gradient(100% 100% 90deg, #ddd, rgba(238, 238, 238, 0) );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238, 238, 238, 0)), to(#ddd));
   bottom: 0; 
 }
 #company-vignette-left{
-  background-image: -moz-linear-gradient(100% 100% 180deg, rgba(238, 238, 238, 0), #ccc );
-  background-image: -webkit-gradient(linear, left center, right center, from(#ccc), to(rgba(238, 238, 238, 0)));
+  background-image: -moz-linear-gradient(100% 100% 180deg, rgba(238, 238, 238, 0), #ddd );
+  background-image: -webkit-gradient(linear, left center, right center, from(#ddd), to(rgba(238, 238, 238, 0)));
   left: 0;
 }
 #company-vignette-right{
-  background-image: -moz-linear-gradient(100% 100% 180deg, #ccc, rgba(238, 238, 238, 0) );
-  background-image: -webkit-gradient(linear, right center, left center, from(#ccc), to(rgba(238, 238, 238, 0)));
+  background-image: -moz-linear-gradient(100% 100% 180deg, #ddd, rgba(238, 238, 238, 0) );
+  background-image: -webkit-gradient(linear, right center, left center, from(#ddd), to(rgba(238, 238, 238, 0)));
   right: 0;
 }
 
