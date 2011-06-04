@@ -25,5 +25,6 @@ function setCodeFontSize() {
   if (uagent.search('iphone') > -1) {
     $('#agent-xmpp-left .code pre').css('font-size', '50%');               
     $('#zgomot-documentation #documentation pre').css('font-size', '47%');               
+    $('#agent-xmpp-documentation #documentation pre').css('font-size', '47%');               
   }
 }
