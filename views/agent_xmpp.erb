@@ -44,8 +44,8 @@
     'Hello World'
   end 
   
-  discovered_pubsub_node do |service, node|
-    EventMachine::PeriodicTimer.new(600) do
+  discovered_pubsub_node do |serv, node|
+    EventMachine::PeriodicTimer.new(60) do
       publish_time(Time.now.to_s)
     end  
   end             

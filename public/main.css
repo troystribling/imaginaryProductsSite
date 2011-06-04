@@ -776,6 +776,7 @@ li.menuItem a {
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 20px;
+  margin-right: 20px;
 }
 #zgomot-documentation #documentation pre {
   background-color: #EEE;
@@ -829,11 +830,12 @@ li.menuItem a {
 #agent-xmpp-right {
   font-family:'Lucida Casual', 'Comic Sans MS';
   float: right;
-  width: 450px;
+  width: 45%;
   margin-top: 27px;
+  margin-right: 20px;
   margin-bottom: 30px;
 }
-#agent-xmpp-right img {
+#agent {
 }
 #agent-xmpp-right .info {
   margin-top: 20px;
@@ -847,6 +849,7 @@ li.menuItem a {
 }
 #agent-xmpp-right p {
   margin-bottom: 20px;
+  margin-right: 20px;
   text-align: left;
 }
 #agent-xmpp-right ul {
@@ -871,7 +874,7 @@ li.menuItem a {
 } 
 #agent-xmpp-left {
   font-family:'Lucida Casual', 'Comic Sans MS';
-  max-width: 475px;
+  max-width: 47.5%;
   padding-top: 30px;
   margin-left: 20px;
   margin-bottom: 30px;
@@ -885,8 +888,8 @@ li.menuItem a {
   margin-bottom: 10px;
 }
 #agent-xmpp-left p {
-  margin-bottom: 20px;
   text-align: left;
+  margin-bottom: 20px;
 }
 #agent-xmpp-left a {
   text-decoration: none;
@@ -899,7 +902,7 @@ li.menuItem a {
   background-color: #fff;
   color: #000;
   text-align: left;
-  font-size: 80%;
+  font-size: 75%;
   border: 5px solid #000;
   margin-bottom: 20px;
   margin-left: 0px;
@@ -972,6 +975,7 @@ li.menuItem a {
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 20px;
+  margin-right: 20px;
 }
 #agent-xmpp-documentation #documentation pre {
   background-color: #fff;

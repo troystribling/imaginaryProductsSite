@@ -10,13 +10,20 @@ function setPageWidth() {
   $('#navigation').width(page_width);
   $('#footer').width(page_width);
 }
-function showVignette (product) {
+function showVignette(product) {
   var uagent = navigator.userAgent.toLowerCase();
   var vignette = '<div id="'+product+'-vignette-top"></div>' +
                  '<div id="'+product+'-vignette-right"></div>' +
                  '<div id="'+product+'-vignette-bottom"></div>' +
                  '<div id="'+product+'-vignette-left"></div>';
   if (uagent.search('ipad') == -1 && uagent.search('ipod') == -1 && uagent.search('iphone') == -1) {
-    $('#content').before(vignette)               
+    $('#content').before(vignette);               
+  }
+}
+function setCodeFontSize() {
+  var uagent = navigator.userAgent.toLowerCase();
+  if (uagent.search('iphone') > -1) {
+    $('#agent-xmpp-left .code pre').css('font-size', '50%');               
+    $('#zgomot-documentation #documentation pre').css('font-size', '47%');               
   }
 }
