@@ -14,7 +14,11 @@
   <script type="text/javascript">
     $(document).ready(function() {
       showVignette('agent-xmpp');
+      setPageWidth();
     });
+    window.onresize = function() {
+      setPageWidth();
+    }
   </script>
  
   <div id="content">

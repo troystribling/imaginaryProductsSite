@@ -13,8 +13,12 @@
   
   <script type="text/javascript">
     $(document).ready(function() {
+      setPageWidth();
       showVignette('zgomot');
     });
+    window.onresize = function() {
+      setPageWidth();
+    }
   </script>
       
   <div id="content">
