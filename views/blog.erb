@@ -5,6 +5,7 @@
 	<title><%= Blog.title %></title>
   <script src='/javascript/jquery-1.5.2.min.js' type='text/javascript' charset='utf-8'></script>
   <script src='/javascript/imaginaryProducts.js' type='text/javascript' charset='utf-8'></script>
+  <script src='/javascript/gameOfLife.js' type='text/javascript' charset='utf-8'></script>
 	<link href="/main.css" rel="stylesheet" type="text/css" />
 	<link href="/feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
   <link rel="icon" type="image/png" href="/favicon.png">  
@@ -15,11 +16,14 @@
   <script type="text/javascript">
     $(document).ready(function() {
       setPageWidth();
+      gameOfLife();
     });
     window.onresize = function() {
       setPageWidth();
+      gameOfLife();
     }
   </script>
+  <canvas id="game-of-life" width="100", height="100"></canvas>
     
   <div id="content">
 
@@ -98,7 +102,9 @@
           </a>
         </li>
         <li class="email">
-          <img src="/company/email.png" alt="email imaginaryProducts"/>
+          <a href="mailto:troy@imaginaryproducts.com">
+            <img src="/company/email.png" alt="email imaginaryProducts"/>
+          </a>
         </li>
         <li class="twitter">
           <a href="http://www.twitter.com/imaginaryprod">

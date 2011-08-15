@@ -1,15 +1,5 @@
 <% content_for :head do %>
-  <script src='/javascript/gameOfLife.js' type='text/javascript' charset='utf-8'></script>
   <script src='/javascript/gallery.js' type='text/javascript' charset='utf-8'></script>
-<% end %>
-<% content_for :canvas do %>
-  <script type="text/javascript">
-    window.onresize = function() {
-      setPageWidth();
-      gameOfLife();
-    }
-  </script>
-  <canvas id="game-of-life" width="100", height="100"></canvas>
 <% end %>
 <% content_for :navigation do %>
   <ul>
@@ -26,7 +16,7 @@
         <a href="/products/mars-mission" class="relative" style="left:500px; top:290px;"><img src="/company/mars-mission-button.png"/></a>
       </div>
       <div class="slide" style="background-image:url('/company/web-gnosus.png');">
-        <a href="/products/web-gnosus" class="relative" style="left:540px; top:249px;"><img src="/company/web-gnosus-button.png"/></a>
+        <a href="/products/web-gnosus" class="relative" style="left:535px; top:255px;"><img src="/company/web-gnosus-button.png"/></a>
       </div>
     </div>
   </div>

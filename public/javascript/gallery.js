@@ -23,6 +23,5 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 	$('#menu ul li.menuItem:first').addClass('act').siblings().addClass('inact');
-  gameOfLife();
 });
 

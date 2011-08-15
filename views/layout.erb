@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">  
   <script src='/javascript/jquery-1.5.2.min.js' type='text/javascript' charset='utf-8'></script>
   <script src='/javascript/imaginaryProducts.js' type='text/javascript' charset='utf-8'></script>
+  <script src='/javascript/gameOfLife.js' type='text/javascript' charset='utf-8'></script>
 	<% yield_content :head %>
   <!--[if !IE 7]>
   	<style type="text/css">
@@ -21,13 +22,15 @@
   <script type="text/javascript">
     $(document).ready(function() {
       setPageWidth();
+      gameOfLife();
     });
     window.onresize = function() {
       setPageWidth();
+      gameOfLife();
     }
   </script>
   
-  <% yield_content :canvas %>
+  <canvas id="game-of-life" width="100", height="100"></canvas>
     
   <div id="content">
     <div id="navigation-wrapper">
@@ -48,7 +51,9 @@
       <ul>
     	  <% yield_content :footer_list %>
         <li>
-          <img src="/company/email.png" alt="email imaginaryProducts"/>
+          <a href="mailto:troy@imaginaryproducts.com">
+            <img src="/company/email.png" alt="email imaginaryProducts"/>
+          </a>
         </li>
         <li>
           <a href="http://www.twitter.com/imaginaryprod">
