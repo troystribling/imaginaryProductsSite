@@ -5,20 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<title>Mars Mission</title>
 	<link href="/main.css" rel="stylesheet" type="text/css" />
+  <script src='/javascript/jquery-1.5.2.min.js' type='text/javascript' charset='utf-8'></script>
+  <script src='/javascript/imaginaryProducts.js' type='text/javascript' charset='utf-8'></script>
 </head>
 
-<body style="background-image: url('/mars-mission/background.png');">
+<body>
   
   <script type="text/javascript">
     $(document).ready(function() {
+      showVignette('mars-mission');
       setPageWidth();
     });
   </script>
   
   <div id="content">
-    <div id="navigation-wrapper">
+    <div id="navigation-wrapper" style="background-color: b50012; border-bottom: 5px solid #000; height: 130px;">
     	<div id="navigation">
-       	<img src="/mars-mission/mars-mission-name.png" class="logo">
     	</div>
     </div>
 
@@ -28,25 +30,25 @@
     </div>
   </div>
 
-  <div id="footer-wrapper">
+  <div id="footer-wrapper" style="background-color: b50012; border-top: 5px solid #000; margin-top: -78px;">
     <div id="footer">
       <div>
-     	  <a href="/"><img src="/mars-mission/mars-mission-imaginaryProducts.png" class="logo"></a>
+     	  <a href="/"><img src="/agent-xmpp/agent-xmpp-imaginaryProducts.png" class="logo"></a>
      	</div>
       <ul>
         <li>
           <a href="mailto:troy@imaginaryproducts.com">
-            <img src="/mars-mission/mars-mission-email.png" alt="email imaginaryProducts"/>
+            <img src="/agent-xmpp/agent-xmpp-email.png" alt="email imaginaryProducts"/>
           </a>
         </li>
         <li>
           <a href="http://www.twitter.com/imaginaryprod">
-            <img src="/mars-mission/mars-mission-twitter.png" alt="Follow imaginaryprod on Twitter"/>
+            <img src="/agent-xmpp/agent-xmpp-twitter.png" alt="Follow imaginaryprod on Twitter"/>
           </a>
         </li>
       </ul>
     </div>
   </div>
-  
+   
 </body>
 </html>
