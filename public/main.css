@@ -495,10 +495,14 @@ li.menuItem a {
 #products li.product {
 }
 #products li.product .icon {
-  margin-left: 10px;
+  margin-left: 20px;
   float:left;
 }
 #products li.product .app-store {
+  float:right;
+  margin-right: 20px;
+}
+#products li.product .coming-soon {
   float:right;
   margin-right: 20px;
 }
