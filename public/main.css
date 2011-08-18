@@ -82,6 +82,13 @@ h1 {
   padding-top: 15px;
   margin: 0px;
 }
+#navigation .logo-name {
+  float: right;
+  padding: 0px;
+  padding-left: 20px;
+  padding-top: 15px;
+  margin: 0px;
+}
 
 /******* game-of-life *******/
 #game-of-life {
