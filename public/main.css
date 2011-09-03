@@ -557,6 +557,45 @@ li.menuItem a {
   clear: right;
 }
 
+/******* product generic *********/
+#screenshots  {
+  margin-top: 20px;
+}
+#screenshots .description {
+  text-align: left;
+  margin-left: 100px;
+}
+#screenshots .description h1 {
+}
+#screenshots .description p {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+#screenshots img {
+  float: left;
+}
+#videos {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  clear: both;
+}
+#videos ul {
+  list-style-type: none;
+}
+#videos li {
+}
+#videos li h1 {
+  font-size: 125%;
+  font-weight: bold;
+  margin-left: 20px;
+} 
+#videos li p {
+  margin: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+} 
+
+
 /******* projects *******/
 #projects {
   margin: 0 auto;
@@ -616,6 +655,7 @@ li.menuItem a {
   border-color:#DDD;
   clear: right;
 }
+
 
 /******* product webgnosus *******/
 #web-gnosus-background {
