@@ -563,7 +563,6 @@ li.menuItem a {
 }
 #screenshots .description {
   text-align: left;
-  margin-left: 100px;
 }
 #screenshots .description h1 {
 }
@@ -575,7 +574,7 @@ li.menuItem a {
   float: left;
 }
 #videos {
-  margin-top: 50px;
+  padding-top: 50px;
   margin-bottom: 50px;
   clear: both;
 }
