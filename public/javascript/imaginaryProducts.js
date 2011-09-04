@@ -16,7 +16,7 @@ function showVignette(product) {
                  '<div id="'+product+'-vignette-right"></div>' +
                  '<div id="'+product+'-vignette-bottom"></div>' +
                  '<div id="'+product+'-vignette-left"></div>';
-  if (uagent.search('ipad') == -1 && uagent.search('ipod') == -1 && uagent.search('iphone') == -1) {
+  if (uagent.search('ipad') == -1 && uagent.search('ipod') == -1 && uagent.search('iphone') == -1 && !$.browser.mozilla) {
     $('#content').before(vignette);               
   }
 }
