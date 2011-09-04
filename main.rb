@@ -110,7 +110,7 @@ end
 #---------------------------------------------------------------------------------------------------------
 get '/blog' do
 	posts = Post.reverse_order(:created_at).limit(10)
-	erb :blog, :locals => { :posts => posts }, :layout => false
+	erb :blog, :locals => { :posts => posts }, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ get '/blog/past/:year/:month/:day/:slug/' do
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post
 	@title = post.title
-	erb :post, :locals => {:post => post}, :layout => :layout
+	erb :post, :locals => {:post => post}, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
@@ -130,7 +130,7 @@ end
 get '/blog/past' do
 	posts = Post.reverse_order(:created_at)
 	@title = "Archive"
-	erb :archive, :locals => { :posts => posts }, :layout => :layout
+	erb :archive, :locals => { :posts => posts }, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
@@ -149,7 +149,7 @@ end
 # admin
 #---------------------------------------------------------------------------------------------------------
 get '/blog/auth' do
-	erb :auth, :layout => :layout
+	erb :auth, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
@@ -161,7 +161,7 @@ end
 #---------------------------------------------------------------------------------------------------------
 get '/blog/posts/new' do
 	auth
-	erb :new, :locals => {:post => Post.new, :url => '/blog/posts'}, :layout => :layout
+	erb :new, :locals => {:post => Post.new, :url => '/blog/posts'}, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------
@@ -177,7 +177,7 @@ get '/blog/past/:year/:month/:day/:slug/edit' do
 	auth
 	post = Post.filter(:slug => params[:slug]).first
 	stop [404, "Page not found"] unless post
-	erb :edit, :locals => {:post => post, :url => post.url}, :layout => :layout
+	erb :edit, :locals => {:post => post, :url => post.url}, :layout => :blog_layout
 end
 
 #---------------------------------------------------------------------------------------------------------

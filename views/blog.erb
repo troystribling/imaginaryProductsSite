@@ -1,45 +1,11 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title><%= Blog.title %></title>
-  <script src='/javascript/jquery-1.5.2.min.js' type='text/javascript' charset='utf-8'></script>
-  <script src='/javascript/imaginaryProducts.js' type='text/javascript' charset='utf-8'></script>
-	<link href="/main.css" rel="stylesheet" type="text/css" />
-	<link href="/feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
-  <link rel="icon" type="image/png" href="/favicon.png">  
-</head>
-
-<body style="background-color: #EEE;">
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      setPageWidth();
-    });
-    window.onresize = function() {
-      setPageWidth();
-    }
-  </script>
-  <canvas id="game-of-life" width="100", height="100"></canvas>
-    
-  <div id="content">
-
-    <div id="vignette-top"></div>
-    <div id="vignette-right"></div>
-    <div id="vignette-bottom"></div>
-    <div id="vignette-left"></div>
-
-    <div id="navigation-wrapper">
-    	<div id="navigation">
-       	<a href="/"><img src="/company/imaginaryProducts-name.png" class="logo"></a>
-        <ul>
-          <li><a href="/products">products</a></li>
-          <li><a href="/projects">projects</a></li>
-          <li class="selected">blog</li>
-        </ul>
-    	</div>
-    </div>
-
+<% content_for :navigation do %>
+  <ul>
+    <li><a href="/products">products</a></li>
+    <li><a href="/projects">projects</a></li>
+    <li class="selected">blog</li>
+  </ul>
+<% end %>
+<% content_for :page do %>
     <div id="page-wrapper">
       <div id="page" style="padding-top: 30px;">
         <div id="post-navigation">
@@ -88,29 +54,4 @@
         <% end %>
       </div>
     </div>
-  </div>
-
-  <div id="footer-wrapper">
-    <div id="footer">
-      <ul>
-        <li class="rss">
-          <a href="/blog/rss">
-            <img src="/company/rss.png" alt="rss imaginaryProducts"/>
-          </a>
-        </li>
-        <li class="email">
-          <a href="mailto:troy@imaginaryproducts.com">
-            <img src="/company/email.png" alt="email imaginaryProducts"/>
-          </a>
-        </li>
-        <li class="twitter">
-          <a href="http://www.twitter.com/imaginaryprod">
-            <img src="/company/twitter.png" alt="Follow imaginaryprod on Twitter"/>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  
-</body>
-</html>
+<% end %>
