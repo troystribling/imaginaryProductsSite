@@ -530,11 +530,14 @@ li.menuItem a {
 } 
 #zgomot-right {
   float: right;
-  width: 350px;
+  width: 45%;
   margin-top: 27px;
   margin-bottom: 30px;
 }
 #zgomot-right img {
+}
+#zgomot-equalizer {
+  margin-left: -80px;
 }
 #zgomot-right .info {
   margin-top: 0px;
@@ -553,7 +556,7 @@ li.menuItem a {
 #zgomot-right ul {
   list-style-type: none;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 #zgomot-right li {
 }
@@ -571,7 +574,7 @@ li.menuItem a {
   text-decoration: none;
 } 
 #zgomot-left {
-  width: 550px;
+  width: 45%;
   padding-top: 30px;
   margin-left: 20px;
   margin-bottom: 30px;
@@ -583,6 +586,7 @@ li.menuItem a {
   text-align: left;
   margin: 0;
   margin-bottom: 10px;
+  margin-top: 50px;
 }
 #zgomot-left p {
   margin-bottom: 20px;
