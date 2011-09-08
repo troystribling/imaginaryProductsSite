@@ -197,14 +197,9 @@ pre span.string { color: #DD00DD; }
 pre span.symbol { color: #008B8B; }
 
 /*******  image gallery *******/
-#centered-content {
-  clear: both;
-  height: 660px;
-  position: relative;
-}
 #gallery {
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 50px;
   width: 800px;
   overflow: hidden;
   text-align: center;
@@ -295,7 +290,7 @@ li.menuItem a {
 /******* products *******/
 #products {
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 50px;
   width: 800px;
 }
 #products ul{
@@ -401,7 +396,7 @@ li.menuItem a {
 /******* projects *******/
 #projects {
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 50px;
   width: 800px;
 }
 #projects ul{

@@ -9,6 +9,17 @@
   </ul>
 <% end %>
 <% content_for :page do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      centerGallery();
+    });
+    window.onresize = function() {
+      setPageWidth();
+      centerGallery();
+      gameOfLife();
+    }
+  </script>
+  <div id="bladder"></div>
   <div id="gallery">
     <div id="slides">
       <div class="slide" style="background-image:url('/company/mars-mission.png');">

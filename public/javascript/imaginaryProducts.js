@@ -10,6 +10,18 @@ function setPageWidth() {
   $('#navigation').width(page_width);
   $('#footer').width(page_width);
 }
+function centerGallery() {
+  var win_height   = $(window).height(),
+      head         = 70,
+      foot         = 95, 
+      gallery      = 525,
+      pad          = 50; 
+  var bladder_height = (win_height - head - foot - gallery - 2 * pad) / 2;
+  if (bladder_height > 0) {
+    $('#bladder').height(bladder_height);
+  }
+}
+
 function showVignette(product) {
   var uagent = navigator.userAgent.toLowerCase();
   var vignette = '<div id="'+product+'-vignette-top"></div>' +
