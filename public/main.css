@@ -379,6 +379,14 @@ li.menuItem a {
 #videos ul {
   list-style-type: none;
 }
+#videos iframe {
+	-moz-box-shadow: 0 0 15px #BBB;
+	-webkit-box-shadow: 0 0 15px #BBB;
+	box-shadow: 0 0 15px #BBB;
+  border-style:solid;
+  border-width:3px;
+  border-color:#000;
+}
 #videos li {
   margin-bottom: 30px;
 }
