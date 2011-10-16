@@ -380,6 +380,7 @@ li.menuItem a {
   list-style-type: none;
 }
 #videos li {
+  margin-bottom: 30px;
 }
 #videos li h1 {
   font-size: 125%;
